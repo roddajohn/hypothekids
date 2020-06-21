@@ -1,0 +1,183 @@
+#+AUTHOR: Rodda John
+#+TITLE: Functions
+#+DATE: 06/22/2020
+#+OPTIONS: timestamp:nil
+
+#+REVEAL_THEME: white
+
+#+OPTIONS: toc:nil
+
+#+REVEAL_PLUGINS: (highlight)
+
+* Clerical Matters
+#+ATTR_REVEAL: :frag (appear)
+- Welcome!
+- We're a large group:
+  - Use Zoom well!
+  - Chatting!
+  - Raising hands!
+  - Faster / slower!
+** Schedule
+[[./src/schedule.png]]
+** Today
+#+ATTR_REVEAL: :frag (appear)
+- Introduce you to writing your own functions
+- Learn about breaking projects down into manageable pieces
+- Start thinking algorithmically
+* Functions
+#+ATTR_REVEAL: :frag (appear)
+- What is a function?
+- A function is a procedure that execute code given certain inputs.
+- It must have
+  - A name
+  - A definition (either local or in a library)
+- It may have
+  - Inputs (we will call these args, or arguments)
+  - Outputs (we will call these return values)
+** Why are these useful?
+#+ATTR_REVEAL: :frag (appear)
+- Why are functions the most useful programming tool?
+- What are some use-cases?
+- How can we conceptualize a function?  How can we tell whether we ought make a function?
+* Functions in Python
+#+ATTR_REVEAL: :frag (appear)
+- We need to learn how to do two things:
+  - Calling functions (executing them, using them)
+  - Defining functions (making our own)
+** Calling Functions
+#+begin_src python
+  print('Hello World!')
+#+end_src
+#+begin_src python
+  len([1, 2, 3, 4, 5, 6])
+#+end_src
+#+begin_src python
+  input()
+#+end_src
+- How many ~args~ does each function have?
+- What is each functions output?
+** Defining Functions
+*** Simple Function
+#+ATTR_REVEAL: :frag (appear)
+ - This function:
+   - Accepts two numerical inputs
+   - Returns the product
+ #+begin_src python
+   def product(x, y):
+       return x * y
+ #+end_src
+*** Sum of a list
+#+ATTR_REVEAL: :frag (appear)
+- This function:
+  - Accepts a list
+  - Returns the sum of the elements of the list
+#+begin_src python
+  def sum_of_list(l):
+      to_return = 0  # Tracks the sum of the list
+
+      i = 0  # Iterator to iterate through the list
+
+      while i < len(l):
+	  to_return += l[i]
+	  i = i + 1
+
+      return to_return
+#+end_src
+*** Generally
+#+ATTR_REVEAL: :frag (appear)
+- ~def~ opens a function definition block
+- A name is required, as well as ~()~ to denote the args
+- Take note of the ~:~
+- As with ~if~ statements, and ~while~ loops, the code in the function is indented
+*** Thus
+#+begin_example python
+  def <name>(<args>):
+  --> code
+  --> (optional) return <to_return>
+#+end_example
+* Let's Try it Out
+** First Problem
+#+ATTR_REVEAL: :frag (appear)
+- Write a function (~sum~) that:
+  - Accepts two numerical inputs
+  - Returns the sum
+- How can we test this function?
+  - What are the edge cases?
+*** First Problem Solution
+#+begin_src python
+  def sum(x, y):
+      return x + y
+#+end_src
+#+begin_src python
+  sum(1, 2)   # Should be 3
+  sum(4, -2)  # Should be 2
+  sum(4, 0)   # Should be 4
+#+end_src
+** Second Problem
+#+ATTR_REVEAL: :frag (appear)
+- Write a function (~product~) that:
+  - Accepts two numerical inputs
+  - Returns the product
+  - Does not use the ~*~ operator, and instead uses the ~sum~ function we defined above
+*** Second Problem Solution
+#+begin_src python
+  def product(x, y):
+      to_return = 0
+
+      iterator = 0
+
+      while iterator < y:
+	  to_return = to_return + x
+
+	  iterator = iterator + 1
+
+      return to_return
+#+end_src
+#+begin_src python
+  product(1, 2)   # Should be 2
+  product(100, 2) # Should be 200
+  product(2, 100) # Should be 200
+  product(2, .5)  # Should be 1
+#+end_src
+** Third Problem
+#+ATTR_REVEAL: :frag (appear)
+- Write a function(~divisible_by~) that:
+  - Accepts two numerical inputs (~number~, and ~factor~)
+  - Returns true if and only if ~number~ is evenly divisble by ~factor~
+  - Recall the ~%~ operator, which returns the remainder of the first operand by the second
+*** Third Problem Solution
+#+begin_src python
+  def divisible_by(number, factor):
+      remainder = number % factor
+
+      if remainder == 0:
+	  return True
+      else:
+	  return False
+#+end_src
+#+begin_src python
+  divisible_by(4, 2)  # Should be True
+  divisible_by(4, 1)  # Should be True
+  divisible_by(15, 3) # Should be True
+  divisible_by(15, 4) # Should be False
+#+end_src
+
+*** Or, even shorter
+#+begin_src python
+  def divisible_by(number, factor):
+      remainder = number % factor
+
+      if remainder == 0:
+	  return True
+      return False
+#+end_src
+*** Or, even shorter
+#+begin_src python
+  def divisible_by(number, factor):
+      return number % factor == 0
+#+end_src
+
+
+
+
+

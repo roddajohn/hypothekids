@@ -1,0 +1,62 @@
+#+AUTHOR: Rodda John
+#+TITLE: Hypothekids Python Worksheet 1
+#+DATE: (expected 30 minutes completion time)
+
+#+OPTIONS: toc:nil
+
+* A Calculator
+We did this in some small groups together, and didn't in others.  Regardless, I'd like you to program this yourself!
+** Requirements
+1) Three variables: ~operation~, ~x~, and ~y~ (all numbers).
+2) Perform the operation selected through ~operation~ (see the below table) on ~x~ and ~y~.
+3) Print the output to the console, using the ~print()~ function
+*** ~operation~ table
+    | ~operation~ Value | Operation |
+    |-------------------+-----------|
+    |                 1 | ~+~       |
+    |                 2 | ~-~       |
+    |                 3 | ~*~       |
+    |                 4 | ~/~       |
+    |                 5 | ~**~      |
+** Samples
+   You can use these to ensure your code is working as it should.  If you set ~operation~ to the value listed, along with ~x~ and ~y~, you should receive the output as listed in the result row, printed to the console.
+   | ~operation~ value | ~x~ | ~y~ | Result |
+   |-------------------+-----+-----+--------|
+   |                 1 |   1 |   1 |      2 |
+   |                 2 |   3 |   2 |      1 |
+   |                 3 |   1 |   2 |      2 |
+   |                 3 |   4 |   2 |      8 |
+   |                 4 |   6 |   2 |      3 |
+   |                 4 |   6 |   4 |    1.5 |
+   |                 5 |   2 |   3 |      8 |
+   |                 5 |   5 |   2 | 25     |
+** Submission Instructions
+   Please submit the code as a single ~.py~ file, called ~calculator.py~
+* An Extension
+We will edit the above calculator to allow the user to interact with the computer, and type the operation, along with their own values for ~x~ and ~y~.
+** A New Function
+~input()~ is the function that will allow us to take user input.
+
+Please consult [[https://docs.python.org/3/library/functions.html#input][the Python documentation]] for an in-depth explanation.
+
+~input(string prompt)~ takes a single argument (or none), which it will render as a prompt for input.  It then returns a variable, representing user input.
+
+For example:
+#+BEGIN_SRC python
+  s = input('Please enter a number')
+#+END_SRC
+
+This will set the variable ~s~ to be whatever the user enters.
+
+Now... this input will be in the form of a string.  To convert it to a number, please use the ~float()~ function (a float is a type of number).
+
+The [[https://docs.python.org/3/library/functions.html#int][documentation can be found here]], but basically ~int('3')~ will return ~3~.
+** Requirements
+1) Some text informing the user of what the various operations are available to them (1 = 'addition' for example)
+2) Prompts informing the user that they are setting ~x~ and ~y~.
+3) The above requirements for calculator, using the user inputted values for ~operation~, ~x~ and ~y~.
+** Samples
+You can use the above samples to test as the code should perform the same things given the same inputs, just ensure that you can enter these values from the console.
+** Submission Instructions
+Please submit the code as a single ~.py~ file, called ~calculator_input.py~
+

@@ -1,0 +1,75 @@
+#+AUTHOR: Rodda John
+#+TITLE: Hypothekids Python Worksheet 3
+#+DATE: (expected 20 minutes completion time)
+
+#+OPTIONS: toc:nil
+
+* Lists
+A list is a new data type.  Instead of holding a single value, it holds multiple values.
+
+You've actually already been introduced to them, and just not known it.  A string is simply a list of characters.
+
+** How to interact with lists
+Lists can be defined like this ~l = [1, 2, 3, 4, 5]~.  This is a list of numbers.
+
+All lists are ZERO INDEXED, ie, to access the first element of the list (~1~), you would write ~l[0]~.  ~l~ being the name of the list, and ~0~ being the element you are trying to access.
+
+** A samples
+
+   #+BEGIN_SRC python
+     l = ['a', 'b', 'c', 'd', 'e', 'f'] # A list with 6 strings
+
+     print (l[0]) # This will print 'a'
+     print (l[2]) # This will print 'c'
+
+     print (l[5]) # This will print 'f'
+   #+END_SRC
+
+** Strings as lists
+   #+BEGIN_SRC python
+     sample_string = 'this is a sample string'
+
+     print (sample_string[0]) # This will print 't'
+     print (sample_string[4]) # this will print ' '
+   #+END_SRC
+
+** Helper function
+   The ~len(<iterable>)~ function returns the length of a string.  See [[https://docs.python.org/3/library/functions.html#len][the documentation]] for more information.
+
+   We can use this function to iterate through a list:
+
+   #+BEGIN_SRC python
+     l = [100, 110, 120, 130, 140, 150]
+
+     index = 0
+
+     while index < len(l):
+	 print (l[index])
+	 index = index + 1
+   #+END_SRC
+
+   This will print out each value of the list.
+
+   Here's a sample way to sum all elements of a list:
+
+   #+BEGIN_SRC python
+     l = [100, 110, 120, 130, 140, 150]
+
+     index = 0
+     sum = 0
+
+     while index < len(l):
+	 sum = sum + l[index]
+	 index = index + 1
+
+     print (sum)
+   #+END_SRC
+
+** The Problem:
+   Write a function that finds the average of a list of numbers.
+
+   ie, given the list of ~[1, 2, 3, 4, 5]~, it should print ~3~.
+
+   Try on ~[14, 16, 15, 17, 19, 20, 23, 25]~, it should be 18.625.
+
+   Submit the code as usual through Google Classroom.

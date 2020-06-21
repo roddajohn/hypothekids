@@ -1,0 +1,106 @@
+% Created 2020-06-13 Sat 10:09
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodda John}
+\date{(expected 20 minutes completion time)}
+\title{Hypothekids Python Worksheet 3}
+\hypersetup{
+ pdfauthor={Rodda John},
+ pdftitle={Hypothekids Python Worksheet 3},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode N/A)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Lists}
+\label{sec:org7418924}
+A list is a new data type.  Instead of holding a single value, it holds multiple values.
+
+You've actually already been introduced to them, and just not known it.  A string is simply a list of characters.
+
+\subsection{How to interact with lists}
+\label{sec:org10243bf}
+Lists can be defined like this \texttt{l = [1, 2, 3, 4, 5]}.  This is a list of numbers.
+
+All lists are ZERO INDEXED, ie, to access the first element of the list (\texttt{1}), you would write \texttt{l[0]}.  \texttt{l} being the name of the list, and \texttt{0} being the element you are trying to access.
+
+\subsection{A samples}
+\label{sec:org6aae5cd}
+
+\begin{verbatim}
+l = ['a', 'b', 'c', 'd', 'e', 'f'] # A list with 6 strings
+
+print (l[0]) # This will print 'a'
+print (l[2]) # This will print 'c'
+
+print (l[5]) # This will print 'f'
+\end{verbatim}
+
+\subsection{Strings as lists}
+\label{sec:org852edd5}
+\begin{verbatim}
+sample_string = 'this is a sample string'
+
+print (sample_string[0]) # This will print 't'
+print (sample_string[4]) # this will print ' '
+\end{verbatim}
+
+\subsection{Helper function}
+\label{sec:org89c855b}
+The \texttt{len(<iterable>)} function returns the length of a string.  See \href{https://docs.python.org/3/library/functions.html\#len}{the documentation} for more information.
+
+We can use this function to iterate through a list:
+
+\begin{verbatim}
+l = [100, 110, 120, 130, 140, 150]
+
+index = 0
+
+while index < len(l):
+    print (l[index])
+    index = index + 1
+\end{verbatim}
+
+This will print out each value of the list.
+
+Here's a sample way to sum all elements of a list:
+
+\begin{verbatim}
+l = [100, 110, 120, 130, 140, 150]
+
+index = 0
+sum = 0
+
+while index < len(l):
+    sum = sum + l[index]
+    index = index + 1
+
+print (sum)
+\end{verbatim}
+
+\subsection{The Problem:}
+\label{sec:orgfa767b0}
+Write a function that finds the average of a list of numbers.
+
+ie, given the list of \texttt{[1, 2, 3, 4, 5]}, it should print \texttt{3}.
+
+Try on \texttt{[14, 16, 15, 17, 19, 20, 23, 25]}, it should be 18.625.
+
+Submit the code as usual through Google Classroom.
+\end{document}

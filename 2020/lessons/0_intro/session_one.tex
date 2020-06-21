@@ -1,0 +1,392 @@
+% Created 2020-05-18 Mon 08:46
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodda John}
+\date{\today}
+\title{Hypothekids Python Class 1}
+\hypersetup{
+ pdfauthor={Rodda John},
+ pdftitle={Hypothekids Python Class 1},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode N/A)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Hi}
+\label{sec:org77151e9}
+\begin{itemize}
+\item Who am I
+\item Why we are here
+\item What we are going to do
+\begin{itemize}
+\item Introduction to Computer Science
+\item Introduction to Computer Programming through Python
+\item How to ask for help and use search engines well
+\item Programming applied to bio labs
+\end{itemize}
+\end{itemize}
+\subsection{What is Computer Science?}
+\label{sec:org76acb0f}
+\begin{itemize}
+\item What do you think of when I say Computer Science?
+\item Is it a discipline or a tool?
+\item Do you need a computer to study it?
+\end{itemize}
+\subsubsection{Formal Definition}
+\label{sec:org37a6b7f}
+\begin{quote}
+Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers. It is the scientific and practical approach to computation and its applications and the systematic study of the feasibility, structure, expression, and mechanization of the methodical procedures that underlie the acquisition, representation, processing, storage, communication of, and access to, information.
+\end{quote}
+\subsubsection{So\ldots{}}
+\label{sec:org39f3a93}
+\begin{itemize}
+\item Is it a discipline or a tool?
+\item Do you need a computer to study it?
+\end{itemize}
+\subsection{And to make sure}
+\label{sec:org4d84a72}
+\begin{itemize}
+\item What is Computer Programming?
+\item What's the difference?
+\end{itemize}
+\subsubsection{Formal Definition}
+\label{sec:orgf70775f}
+\begin{quote}
+Computer programming is the process of designing and building an executable computer program to accomplish a specific computer result.
+\end{quote}
+\subsection{Disclaimer}
+\label{sec:orga1a7cc4}
+\begin{itemize}
+\item I don't do biology.
+\item I don't really do a lot of Computer Programming.
+\item I do a lot of Computer Science.
+\item I'm eccentric and precise.  Please ask questions.
+\item I respect thought, regardless of if it's right or wrong.
+\end{itemize}
+\subsection{Zoom / Teaching Generally}
+\label{sec:org3a9cf77}
+\begin{itemize}
+\item I have a bunch of screens, I can see reactions, so use them!
+\item I will be switching between a presentation, a whiteboard, and code
+\item Asking questions in chat works, as does raising your hand and I'll call on you
+\item Speed up and slow down are VERY helpful!
+\item I have PDFs of all the presentations, I'll distribute them.  Some things are included as reference.
+\end{itemize}
+\section{The Broad Overview}
+\label{sec:orgc26f099}
+\begin{itemize}
+\item What is a computer?
+\item Wires
+\end{itemize}
+\subsection{Conclusions}
+\label{sec:org1c7d0e5}
+\begin{itemize}
+\item A computer is really dumb
+\item A computer does certain things well, and most things poorly
+\item A computer is quite basic and low level
+\end{itemize}
+\subsection{Computer Architecture}
+\label{sec:org0032d80}
+\begin{itemize}
+\item Differentiation between high level and low level (human to computer)
+\item Computers understand binary (it's wires)
+\item We understand English
+\item English --> Python --> C --> Assembly --> Binary
+\end{itemize}
+\section{Lexigraphy}
+\label{sec:org0992b84}
+\begin{itemize}
+\item Interpreter
+\item Language
+\item Script / Program
+\item Executing / Running a Program
+\end{itemize}
+\subsection{Tools}
+\label{sec:orgd1b8066}
+\begin{center}
+\begin{tabular}{ll}
+Term & For Us\\
+\hline
+Language & Python (for now)\\
+Interpreter & repl.it, IDLE\\
+Script & We'll write them\\
+Execution & GCC\\
+\end{tabular}
+\end{center}
+We will use a language interpreter to execute our scripts.
+\subsection{Let's set it up}
+\label{sec:org8091ae0}
+\begin{itemize}
+\item We need an interpreter
+\item \href{https://python.org}{python.org} OR \href{https://repl.it}{repl.it}
+\item Download IDLE OR create an account on repl.it
+\end{itemize}
+\subsection{What we need to know how to do}
+\label{sec:org0da63c9}
+\begin{itemize}
+\item Create a script
+\begin{itemize}
+\item IDLE: File --> New (Save it)
+\item repl.it: new repl (Python)
+\end{itemize}
+\item Run the script
+\begin{itemize}
+\item IDLE: Run --> Run Module
+\item repl.it: Click run at the top
+\end{itemize}
+\end{itemize}
+\section{Let's Begin}
+\label{sec:org8744275}
+\begin{itemize}
+\item Let's try the following (type it in and run it):
+\begin{verbatim}
+print('Hello World!')
+\end{verbatim}
+\end{itemize}
+\subsection{But wait, what'd that do}
+\label{sec:org5584a39}
+\begin{itemize}
+\item From before:
+\begin{verbatim}
+print('Hello World!')
+\end{verbatim}
+\item \texttt{print()} is a function
+\item \texttt{'Hello World!'} is an argument
+\item So, to generalize:
+\begin{itemize}
+\item \texttt{print(arg)} prints the \texttt{arg}
+\end{itemize}
+\end{itemize}
+\section{Variables}
+\label{sec:orgf4b47e6}
+\begin{itemize}
+\item Does \texttt{print(Hello world!)} work?
+\item Predict first
+\item Test it
+\item Analyze the error
+\begin{itemize}
+\item What's the error?
+\end{itemize}
+\end{itemize}
+\subsection{Strings}
+\label{sec:orge54b9f8}
+\begin{itemize}
+\item A string is any expression of characters enclosed in \texttt{'} or \texttt{"}
+\item Is \texttt{'h'} a string?
+\item How about \texttt{h}?
+\item What about \texttt{'3'}?
+\item How about \texttt{3}?
+\item How about \texttt{'Hi, what's up Bob?'}?
+\item What about \texttt{"Hi, what's up Bob?"}?
+\item So what variable type does the print function accept?
+\end{itemize}
+\subsection{Numbers}
+\label{sec:org04a4fb9}
+\begin{itemize}
+\item A number is a representation of, well, a number\ldots{}
+\item \texttt{3} is a number, \texttt{'3'} is not
+\item You can do math on numbers!
+\item \texttt{3 + 3} is valid Python
+\item So is \texttt{3 - 3}, \texttt{3 * 3}, \texttt{3 / 3}, and even \texttt{3 ** 3}.
+\item What is \texttt{**}
+\item Technically speaking, these are function shortcuts
+\begin{itemize}
+\item \texttt{3 + 3} is really \texttt{add(3, 3)}
+\end{itemize}
+\item Try some stuff out
+\item Does Python understand parentheses?
+\end{itemize}
+\subsection{Ok, but what is a variable?}
+\label{sec:org22cbcb9}
+It's kinda like a big box
+
+\begin{itemize}
+\item Let's see it in action:
+\begin{verbatim}
+x = 1
+y = 2
+
+z = x + y
+print(z)
+
+print(x + y)
+\end{verbatim}
+
+\item Let's go through our process again:
+\begin{itemize}
+\item Predict
+\item Test
+\item Analyze
+\end{itemize}
+\end{itemize}
+\subsection{Same drill}
+\label{sec:org5899cf1}
+Predict, test, analyze\ldots{}
+
+\begin{itemize}
+\item Here's another one for you
+\begin{verbatim}
+x = 'this'
+y = 'is'
+z = 'a word'
+
+nstring = x + y + z
+print(nstring)
+\end{verbatim}
+
+\item Given above:
+\begin{verbatim}
+print(x + y + z)
+\end{verbatim}
+
+\item And finally:
+\begin{verbatim}
+print(x + ' ' + y + ' ' + z)
+\end{verbatim}
+\end{itemize}
+
+\section{Boolean Expressions}
+\label{sec:orgc3bcb9a}
+Just another variable type\ldots{}
+
+\begin{itemize}
+\item Can only be \texttt{True} or \texttt{False}
+\item What operators could we use to get boolean values?
+\item How about to combine two boolean values to one?
+\item Let's check this out:
+\begin{verbatim}
+a, b = 1, 2
+
+x, y = True, False
+
+print(a < b)
+\end{verbatim}
+\item How about:
+\begin{verbatim}
+print(x and y)
+print(x or y)
+print (x and not y)
+\end{verbatim}
+\end{itemize}
+\subsection{Boolean Operators}
+\label{sec:orgeb9ad22}
+Non-Boolean Variables --> Boolean Variables:
+\begin{itemize}
+\item \begin{center}
+\begin{tabular}{ll}
+Operator & Description\\
+\hline
+< & Less than\\
+> & Greater than\\
+== & Equality\\
+<= & lte\\
+>= & gte\\
+!= & Not equals\\
+\end{tabular}
+\end{center}
+\end{itemize}
+
+\subsection{Boolean Operators}
+\label{sec:org3540771}
+Boolean Variables --> Boolean Variables:
+\begin{itemize}
+\item \begin{center}
+\begin{tabular}{ll}
+Operator & Description\\
+\hline
+and & logical and\\
+or & logical or\\
+not & logical not\\
+\end{tabular}
+\end{center}
+\end{itemize}
+\subsection{Um, why can't we just use \texttt{=} for equality}
+\label{sec:orgd99f7c9}
+Like normal people\ldots{}
+\begin{itemize}
+\item Do we already have \texttt{=} in python?
+\item What does it do?
+\item Consider:
+\begin{verbatim}
+x = 1
+
+x == 1
+\end{verbatim}
+\item Do we want them to be interchangeable?
+\end{itemize}
+\subsection{For Reference}
+\label{sec:org12ccced}
+Boolean Table
+\begin{center}
+\begin{tabular}{llll}
+x & y & x and y & x or y\\
+\hline
+t & t & t & t\\
+t & f & f & t\\
+f & t & f & t\\
+f & f & f & f\\
+\end{tabular}
+\end{center}
+
+\section{Control Structures}
+\label{sec:orgf4e746a}
+If this, then that
+
+\begin{itemize}
+\item This is like a fork in the road
+\item What's a good way to represent whether or not to execute code?  Variable type?
+\item Consider
+\begin{verbatim}
+x, y = 1, 2
+
+if (x < y):
+    print('x is less than y')
+\end{verbatim}
+\item When will it execute the print statement?
+\end{itemize}
+\subsection{If, elif, and else}
+\label{sec:org3cf5de3}
+\begin{itemize}
+\item What's the difference here, is there one?
+\begin{verbatim}
+x, y = 1, 2
+
+if (x < y):
+    print ('x is less than y')
+
+if (x < y):
+    print ('Yipee')
+
+if (x > y):
+    print('Nope')
+\end{verbatim}
+\begin{verbatim}
+x, y = 1, 2
+
+if (x < y):
+    print('x is less than y')
+
+elif (x < y):
+    print('Yipee')
+
+else:
+    print('Nope')
+\end{verbatim}
+\end{itemize}
+\end{document}

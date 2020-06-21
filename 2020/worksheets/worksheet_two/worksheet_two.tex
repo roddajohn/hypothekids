@@ -1,0 +1,82 @@
+% Created 2020-06-17 Wed 17:59
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodda John}
+\date{(expected 30 minutes completion time)}
+\title{Hypothekids Python Worksheet 2}
+\hypersetup{
+ pdfauthor={Rodda John},
+ pdftitle={Hypothekids Python Worksheet 2},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode N/A)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{A Loop}
+\label{sec:orgf3bea5e}
+This is a new concept, introduced through old concepts!  You will need to read through the "supplemental information", but the problem is explained first.
+
+This likely won't make much sense, but the official documentation can be found \href{https://docs.python.org/3/reference/compound\_stmts.html\#the-while-statement}{here}.
+\subsection{The Problem}
+\label{sec:org2026065}
+Write a piece of code that prints all the \textbf{odd} numbers from 1 to 1000.
+\subsection{Sample Output}
+\label{sec:orgf1bc1b3}
+If the code did this for the numbers from 1 to 10, it would print out:
+\begin{itemize}
+\item 1
+\item 3
+\item 5
+\item 7
+\item 9
+\end{itemize}
+\subsection{Supplemental Information}
+\label{sec:org33064ec}
+An \texttt{if} statement takes the form \texttt{if <boolean expression:} followed by indented code.  This code is conditionally executed if and only if the boolean condition is true.
+
+A \texttt{while} statement takes the form \texttt{while <boolean expression>:} followed by indented code.  This code is executed \textbf{while} the boolean condition is true.
+
+Thus, the condition should start out true and change within the block so as to make it false.
+
+For example, the following code prints all the numbers from 1 to 100.
+
+\begin{verbatim}
+i = 1
+
+while i < 100:
+    print (i)
+    i = i + 1
+\end{verbatim}
+\section{Nested Loops}
+\label{sec:org82fac87}
+\subsection{The Problem}
+\label{sec:orgc065df9}
+Write a piece of code that renders all the coordinates on a 100 by 100 grid.
+\subsection{Sample Output}
+\label{sec:org26a31f0}
+If the code did this on a 2 by 2 grid, it would print out:
+\begin{itemize}
+\item (0, 0)
+\item (0, 1)
+\item (1, 0)
+\item (1, 1)
+\end{itemize}
+
+Hint: In the previous problem, you had one while loop with one moving variable, here you will need two.
+\end{document}

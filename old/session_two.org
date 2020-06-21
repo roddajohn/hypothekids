@@ -1,0 +1,586 @@
+#+REVEAL_THEME: white
+
+#+REVEAL_TITLE_SLIDE_BACKGROUND: logo.png
+#+REVEAL_TITLE_SLIDE_BACKGROUND_SIZE: 1080px
+
+#+Title: Session 2
+#+Author: Rodda John
+#+Email: rj2485[at]columbia[dot]edu
+
+#+OPTIONS: date:t creator:t
+#+OPTIONS: toc:nil
+
+#+REVEAL_PLUGINS: (highlight)
+
+* Let's Talk
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  
+  #+ATTR_REVEAL: :frag (appear)
+  - How's life everyone?
+  - Outstanding questions from yesterday?
+  - Random CS related questions?
+
+* Functions
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  - What is a function?
+  - Why are they useful?
+  - Consider:
+    #+BEGIN_SRC python
+      def add(x, y):
+	  return x + y
+    #+END_SRC
+  - How would we call this function?
+  - Answer:
+    #+BEGIN_SRC python
+      add(x, y)
+    #+END_SRC
+
+** Some exercises:
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  
+  But first...
+  #+ATTR_REVEAL: :frag (appear)
+  - The ~%~ operator
+  - Operates on two numbers, returns the remainder
+  - What is ~3 % 4~
+  - ~4 % 4~
+  - ~4 % 5~
+  - ~'a' % 1~
+** Let's write 3 functions
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  1) ~divisible_by(x, y)~
+     1) Returns ~True~ if ~x~ is divisible by ~y~, ~False~ if not
+  2) ~num_factors(x)~
+     1) Returns the number of factors that ~x~ has
+  3) ~is_prime(x)~
+     1) Returns ~True~ if ~x~ is prime, ~False~ if not
+
+  #+ATTR_REVEAL: :frag (appear)
+  - To test the functions, please see below:
+    
+    #+BEGIN_SRC python
+      divisible_by(10, 2) # Should return True
+      divisible_by(10, 3) # Should return False
+
+      num_factors(4) # Should be 3
+      num_factors(5) # Should be 2
+
+      is_prime(3) # Should be True
+      is_prime(6) # Should be False
+    #+END_SRC
+*** ~divisible_by(x, y)~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  - You probably have something like:
+    #+BEGIN_SRC python
+      def divisible_by(x, y):
+	  if (x % y == 0):
+	      return True
+	  else:
+	      return False
+    #+END_SRC
+
+  - But you could also have:
+    #+BEGIN_SRC python
+      def divisible_by(x, y):
+	  if (x % y == 0):
+	      return True
+	  return False
+    #+END_SRC
+
+  - Or even:
+    #+BEGIN_SRC python
+      def divisible_by(x, y):
+  	return x % y == 0
+    #+END_SRC
+*** ~num_factors(x)~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  - You may have something like this:
+    #+BEGIN_SRC python
+      def num_factors(x):
+	  i = 0
+	  num_factors = 0
+
+	  while i <= x:
+	      if divisible_by(x, i):
+		  num_factors += 1
+	      i += 1
+
+	  return num_factors
+    #+END_SRC
+
+  - How about something like this:
+    #+BEGIN_SRC python
+      def num_factors(x):
+	  num_factors = 0
+
+	  for i in range(1, x + 1):
+	      if divisible_by(x, i):
+		  num_factors += 1
+
+	  return num_factors
+    #+END_SRC
+*** ~is_prime(x)~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  - You probably have something like this:
+    #+BEGIN_SRC python
+      def is_prime(x):
+	  if num_factors(x) == 2:
+	      return True
+	  return False
+    #+END_SRC
+  - But you could also have:
+    #+BEGIN_SRC python
+      def is_prime(x):
+	  return num_factors(x) == 2
+    #+END_SRC
+  - Is 1 a prime number?
+
+* Lists
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  Let's review
+
+  #+ATTR_REVEAL: :frag (appear)
+  - What is a list?
+  - How can we access an element in a list?
+  - What is the first element in a list's index?
+  - How can we get the length of a list?
+  - Is a string a list?
+** Let's write some code!
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  1) ~average(l)~
+     1) Assume l is a list of numbers, find the average of all elements
+  2) ~has_prime(l)~
+     1) Returns ~True~ if the list has a prime number, ~False~ if not
+  3) ~contains(l, e)~
+     1) Returns ~True~ if ~l~ contains ~e~, ~False~ if not
+
+  #+REVEAL: split
+  To test the functions, please see below:
+    
+    #+BEGIN_SRC python
+      l_one = [1, 3, 5, 7, 9]
+      l_two = [4, 6, 8, 10, 12]
+
+      average(l_one) # Should be 5
+      average(l_two) # Should be 8
+
+      has_prime(l_one) # Should be True
+      has_prime(l_two) # Should be False
+
+      contains(l_one, 5) # Should be True
+      contains(l_two, 5) # Should be False
+    #+END_SRC
+*** ~average(l)~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  Seems familiar?
+    
+  #+ATTR_REVEAL: :frag (appear)
+  - You may have something that looks like this:
+    #+BEGIN_SRC python
+      def average(l):
+	  current_sum = 0
+
+	  for e in l:
+	      current_sum += e
+
+	  return current_sum / len(l)
+    #+END_SRC
+  - You could also have used something like:
+    #+BEGIN_SRC python
+      def average(l):
+	  return sum(l) / len(l)
+    #+END_SRC
+
+*** ~has_prime(l)~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+    
+  #+ATTR_REVEAL: :frag (appear)
+  - You may have something that looks like this:
+    #+BEGIN_SRC python
+      def has_prime(l):
+	  has_prime_num = False
+    
+	  for e in l:
+	      if is_prime(e):
+		  has_prime_num = True
+
+	  return has_prime_num
+    #+END_SRC
+  - You could also have used something like:
+    #+BEGIN_SRC python
+      def has_prime(l):
+	  for e in l:
+	      if is_prime(e):
+		  return True
+        
+	  return False
+    #+END_SRC
+
+*** ~contains(l, e)~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+    
+  #+ATTR_REVEAL: :frag (appear)
+  - You may have something that looks like this:
+    #+BEGIN_SRC python
+      def contains(l, e):
+	  for elem in l:
+	      if elem == e:
+		  return True
+	  return False
+    #+END_SRC
+  - You could also have used something like:
+    #+BEGIN_SRC python
+      def contains(l, e):
+	  i = 0
+	  while i < len(l):
+	      if l[i] == e:
+		  return True
+	      i += 1
+	  return False
+    #+END_SRC
+  - Or, how about something like this:
+    #+BEGIN_SRC python
+      def contains(l, e):
+	  return e in l
+    #+END_SRC
+** Just to be sure:
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+   Try this one out:
+   
+   #+ATTR_REVEAL: :frag (appear)
+   1) Write a function (~count_evens(l)~) which returns the number of even ints in the given array.
+
+   2) Use the following to test:
+      #+BEGIN_SRC python
+	count_evens([2, 1, 2, 3, 4]) # Should be 3
+	count_evens([2, 2, 0]) # Should be 3
+	count_evens([1, 3, 5]) # Should be 0
+      #+END_SRC
+*** Solutions for ~count_evens(l)~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  - Hmmmmm, how about something like this?
+    #+BEGIN_SRC python
+      def count_evens(l):
+	  num_evens = 0
+
+	  for e in l:
+	      if e % 2 == 0:
+		  num_evens += 1
+
+	  return num_evens
+    #+END_SRC
+
+  - 
+    #+BEGIN_SRC python
+      def is_even(n):
+	  return n % 2 == 0
+
+      def count_evens(l):
+	  num_evens = 0
+
+	  for e in l:
+	      if is_even(e):
+		  num_evens += 1
+
+	  return num_evens
+    #+END_SRC
+
+** Cool List Operations
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  
+  First predict, then try, then analyze...
+
+  #+ATTR_REVEAL: :frag (appear)
+  - Given the following list:
+    - ~l = [0, 7, 3, 4, 5, 2, 1]~
+  - ~list[-1]~, ~list[-2]~
+  - ~list[0:2]~, ~list[1:3]~
+  - ~list[:2]~, ~list[2:]~
+
+* File I/O
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  Reading and writing to files.
+  [[https://github.com/roddajohn/hypothekids]]
+  #+ATTR_REVEAL: :frag (appear)
+  - What is a file?
+  - Guesses as to what a ~.csv~ is?
+  - Are there any differences between what's in one file and what's in another?
+
+** Python Examples
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  Some work...
+  #+ATTR_REVEAL: :frag (appear)
+  - What does ~split()~ do?
+  - How about ~join()~?
+  - Write an example or two, play with it...
+
+*** ~split()~ and ~join()~
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  Here's an example:
+
+    #+BEGIN_SRC python
+      string_to_parse = 'name,email,age,birthday'
+
+      parsed_on_comma = string_to_parse.split(',')
+      print(parsed_on_comma)
+
+      recombined = ','.join(parsed_on_comma)
+      print(recombined)
+    #+END_SRC
+
+    #+ATTR_REVEAL: :frag (appear)
+    - What datatype is ~string_to_parse~?
+    - How about ~parsed_on_comma~?
+    - And ~recombined~?
+    - What would ~parsed_on_comma.split('')~ return?
+** Now for some file work
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+   File: ~data1.csv~
+
+   #+ATTR_REVEAL: :frag (appear)
+   - A snippet:
+     #+BEGIN_SRC python
+       file_contents = open('data1.csv').read()
+
+       lines_as_array = file_contents.split('\n')
+     #+END_SRC
+
+   - The file looks like this:
+     | Name        | Email        | Age | Birthday   |
+     |-------------+--------------+-----+------------|
+     | random name | random email |  -1 | 08/16/1999 |
+
+   - Print out every person's name, email, age, and birthday
+*** An example
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+BEGIN_SRC python
+    file_contents = open('data1.csv').read()
+
+    lines_as_array = file_contents.split('\n')
+
+    for line in lines_as_array:
+	if line == '':
+	    continue
+    
+	split_data = line.split(',')
+
+	print ('Name: ' + split_data[0] + 
+	       ', email: ' + split_data[1] + 
+	       ', age: ' + split_data[2] +
+	       ', birthday: ' + split_data[3])
+
+    print ('Read ' + str(len(lines_as_array)) + ' people')
+  #+END_SRC
+** Another one...
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  File ~data2.csv~
+  
+  #+ATTR_REVEAL: :frag (appear)
+  - File looks like:
+    | ID | XCORD | YCORD | ZCORD |   DX |   DY |   DZ |
+    |----+-------+-------+-------+------+------+------|
+    |  1 |     1 |     2 |     3 | 1.43 | 2.87 | -918 |
+    |  2 |     7 |     6 |     3 | -1.2 | 2.67 |  713 |
+
+  - Find the:
+    - Average ~xcord~, average ~ycord~, average ~zcord~, etc
+    - For every three coordinates (three rows), print the midpoint before and after change
+*** Part 1
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+BEGIN_SRC python
+    f = open('data2.csv').read().split('\n')
+
+    sums = [0, 0, 0, 0, 0, 0, 0]
+
+    for line in f:
+	split = f.split(',')
+
+	i = 0
+	for i in range(len(split)):
+	    sums[i] += split[i]
+
+    i = 0
+    for i in range(len(sums)):
+	print(str(i) + 'th index avg is: ' + str(sums[i] / len(f)))
+
+  #+END_SRC
+
+*** Part 2
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+BEGIN_SRC python
+    def mpoint(x1, y1, z1, x2, y2, z2, x3, y3, z3):
+	return [(x1 + x2 + x3) / 3,
+		(y1 + y2 + y3) / 3,
+		(z1 + z2 + z3) / 3]
+
+    f = open('data2.csv').read().split('\n')
+
+    i = 0
+    for i in range(len(f) - 2):
+	split1 = f[i].split(',')
+	split2 = f[i + 1].split(',')
+	split3 = f[i + 2].split(',')
+
+	mpoint = mpoint(int(split1[1]), int(split1[2]), int(split1[3]),
+			int(split2[1]), int(split2[2]), int(split2[3]),
+			int(split3[1]), int(split3[2]), int(split3[3]))
+
+	print ('Mpoint: (' + str(mpoint[0]) + ', ' + str(mpoint[1]) + ',' + str(mpoint[2]))
+  #+END_SRC
+
+    
+
+* Problem Solving
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  - When approached with a problem that you don't know how to solve, what do you do?
+
+  #+REVEAL: split
+  #+ATTR_REVEAL: :frag (appear)
+  1) Use paper or a whiteboard to figure out what functions you want to write
+     1) Better to go more simple than more complex
+  2) Figure out the main logic in pseudocode
+  3) Code while consulting your design ideas
+
+** Let's do an example
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  
+  Euler #3
+  [[./euler3.png]]
+
+  #+ATTR_REVEAL: :frag (appear)
+  1) Use paper or a whiteboard to figure out what functions you want to write
+     1) Better to go more simple than more complex
+  2) Figure out the main logic in pseudocode
+  3) Code while consulting your design ideas
+
+** And another few:
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  [[./euler6.png]]
+  [[./euler10.png]]
+  

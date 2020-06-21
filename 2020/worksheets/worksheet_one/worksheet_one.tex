@@ -1,0 +1,108 @@
+% Created 2020-06-17 Wed 17:49
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodda John}
+\date{(expected 30 minutes completion time)}
+\title{Hypothekids Python Worksheet 1}
+\hypersetup{
+ pdfauthor={Rodda John},
+ pdftitle={Hypothekids Python Worksheet 1},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode N/A)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{A Calculator}
+\label{sec:org8a2818f}
+We did this in some small groups together, and didn't in others.  Regardless, I'd like you to program this yourself!
+\subsection{Requirements}
+\label{sec:org2a94cc8}
+\begin{enumerate}
+\item Three variables: \texttt{operation}, \texttt{x}, and \texttt{y} (all numbers).
+\item Perform the operation selected through \texttt{operation} (see the below table) on \texttt{x} and \texttt{y}.
+\item Print the output to the console, using the \texttt{print()} function
+\end{enumerate}
+\subsubsection{\texttt{operation} table}
+\label{sec:org5e8bee4}
+\begin{center}
+\begin{tabular}{rl}
+\texttt{operation} Value & Operation\\
+\hline
+1 & \texttt{+}\\
+2 & \texttt{-}\\
+3 & \texttt{*}\\
+4 & \texttt{/}\\
+5 & \texttt{**}\\
+\end{tabular}
+\end{center}
+\subsection{Samples}
+\label{sec:orgc7fb7ae}
+You can use these to ensure your code is working as it should.  If you set \texttt{operation} to the value listed, along with \texttt{x} and \texttt{y}, you should receive the output as listed in the result row, printed to the console.
+\begin{center}
+\begin{tabular}{rrrr}
+\texttt{operation} value & \texttt{x} & \texttt{y} & Result\\
+\hline
+1 & 1 & 1 & 2\\
+2 & 3 & 2 & 1\\
+3 & 1 & 2 & 2\\
+3 & 4 & 2 & 8\\
+4 & 6 & 2 & 3\\
+4 & 6 & 4 & 1.5\\
+5 & 2 & 3 & 8\\
+5 & 5 & 2 & 25\\
+\end{tabular}
+\end{center}
+\subsection{Submission Instructions}
+\label{sec:orgbcf23a8}
+Please submit the code as a single \texttt{.py} file, called \texttt{calculator.py}
+\section{An Extension}
+\label{sec:org1c5fddc}
+We will edit the above calculator to allow the user to interact with the computer, and type the operation, along with their own values for \texttt{x} and \texttt{y}.
+\subsection{A New Function}
+\label{sec:org9b9ac27}
+\texttt{input()} is the function that will allow us to take user input.
+
+Please consult \href{https://docs.python.org/3/library/functions.html\#input}{the Python documentation} for an in-depth explanation.
+
+\texttt{input(string prompt)} takes a single argument (or none), which it will render as a prompt for input.  It then returns a variable, representing user input.
+
+For example:
+\begin{verbatim}
+s = input('Please enter a number')
+\end{verbatim}
+
+This will set the variable \texttt{s} to be whatever the user enters.
+
+Now\ldots{} this input will be in the form of a string.  To convert it to a number, please use the \texttt{float()} function (a float is a type of number).
+
+The \href{https://docs.python.org/3/library/functions.html\#int}{documentation can be found here}, but basically \texttt{int('3')} will return \texttt{3}.
+\subsection{Requirements}
+\label{sec:orgaefca50}
+\begin{enumerate}
+\item Some text informing the user of what the various operations are available to them (1 = 'addition' for example)
+\item Prompts informing the user that they are setting \texttt{x} and \texttt{y}.
+\item The above requirements for calculator, using the user inputted values for \texttt{operation}, \texttt{x} and \texttt{y}.
+\end{enumerate}
+\subsection{Samples}
+\label{sec:orgff64820}
+You can use the above samples to test as the code should perform the same things given the same inputs, just ensure that you can enter these values from the console.
+\subsection{Submission Instructions}
+\label{sec:orge268839}
+Please submit the code as a single \texttt{.py} file, called \texttt{calculator\_input.py}
+\end{document}

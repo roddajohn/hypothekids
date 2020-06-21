@@ -1,0 +1,46 @@
+#+AUTHOR: Rodda John
+#+TITLE: Hypothekids Python Worksheet 2
+#+DATE: (expected 30 minutes completion time)
+
+#+OPTIONS: toc:nil
+
+* A Loop
+This is a new concept, introduced through old concepts!  You will need to read through the "supplemental information", but the problem is explained first.
+
+This likely won't make much sense, but the official documentation can be found [[https://docs.python.org/3/reference/compound_stmts.html#the-while-statement][here]].
+** The Problem
+   Write a piece of code that prints all the *odd* numbers from 1 to 1000.
+** Sample Output
+   If the code did this for the numbers from 1 to 10, it would print out:
+   - 1
+   - 3
+   - 5
+   - 7
+   - 9
+** Supplemental Information
+   An ~if~ statement takes the form ~if <boolean expression:~ followed by indented code.  This code is conditionally executed if and only if the boolean condition is true.
+
+   A ~while~ statement takes the form ~while <boolean expression>:~ followed by indented code.  This code is executed *while* the boolean condition is true.
+   
+   Thus, the condition should start out true and change within the block so as to make it false.
+
+   For example, the following code prints all the numbers from 1 to 100.
+
+   #+BEGIN_SRC python
+     i = 1
+
+     while i < 100:
+	 print (i)
+	 i = i + 1
+   #+END_SRC
+* Nested Loops
+** The Problem
+   Write a piece of code that renders all the coordinates on a 100 by 100 grid.
+** Sample Output
+   If the code did this on a 2 by 2 grid, it would print out:
+   - (0, 0)
+   - (0, 1)
+   - (1, 0)
+   - (1, 1)
+
+   Hint: In the previous problem, you had one while loop with one moving variable, here you will need two.

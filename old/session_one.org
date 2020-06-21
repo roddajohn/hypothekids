@@ -1,0 +1,159 @@
+#+REVEAL_THEME: white
+
+#+REVEAL_TITLE_SLIDE_BACKGROUND: logo.png
+#+REVEAL_TITLE_SLIDE_BACKGROUND_SIZE: 1080px
+
+#+OPTIONS: toc:nil
+
+#+REVEAL_PLUGINS: (highlight)
+
+
+* Goals
+:PROPERTIES:
+:reveal_background: logo.png
+:reveal_background_size: 1080px
+:reveal_background_trans: slide
+:END:
+
+#+ATTR_REVEAL: :frag (appear)
+- Basic introduction to Computer Science
+- Basic introduction to Python
+- Reading documentation and using Google
+- Simple data analysis in Python
+
+
+* What is Computer Science?
+:PROPERTIES:
+:reveal_background: logo.png
+:reveal_background_size: 1080px
+:reveal_background_trans: slide
+:END:
+
+#+ATTR_REVEAL: :frag (appear)
+- When I say Computer Science, what do you think of?
+- Is it a discipline or a tool?
+- Do you need a computer to study it?
+
+** Formal Definition
+:PROPERTIES:
+:reveal_background: logo.png
+:reveal_background_size: 1080px
+:reveal_background_trans: slide
+:END:
+   
+#+BEGIN_QUOTE
+Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers. It is the scientific and practical approach to computation and its applications and the systematic study of the feasibility, structure, expression, and mechanization of the methodical procedures that underlie the acquisition, representation, processing, storage, communication of, and access to, information.
+#+END_QUOTE
+
+** So...
+:PROPERTIES:
+:reveal_background: logo.png
+:reveal_background_size: 1080px
+:reveal_background_trans: slide
+:END:
+
+#+ATTR_REVEAL: :frag (appear)
+- Is it a discipline or a tool?
+- Do you need a computer to study it?
+- Disclaimer
+
+* While loops
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  Same deal really...
+
+  #+ATTR_REVEAL: :frag (appear)
+  - Instead of executing the block if true once, it repeats until the condition is ~False~
+  - What is printed out?
+    #+BEGIN_SRC python
+      i = 0
+
+      while (i < 100):
+	  print (i)
+	  i = i + 1
+    #+END_SRC
+
+  - Let's trace though it
+* How to Google
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+  What if I forget something, is it ok to Google it?
+
+  #+ATTR_REVEAL: :frag (appear)
+  - Let's try and figure out what a function ~input()~ does
+  - First step, try the official python documentation:
+    [[./python_docs.png]]
+  - So, let's analyze this, and try it
+** How to Google well
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+    #+ATTR_REVEAL: :frag (appear)
+    - Is it better to Google smaller questions or the entire problem?
+      - Why?
+    - Where's the line between plagiarizing and utilizing the community?
+    - What are some good websites for looking stuff up on?
+    - Try:
+      - Stack overflow
+      - Official Python Documentation
+* Project 1
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  A calculator
+  
+  #+ATTR_REVEAL: :frag (appear)
+  1) Ask the user to select an operation
+  2) Ask the user for the inputs of that operation
+  3) Perform the operation, print the result
+  4) Ask if the user wishes to use the calculator again
+     1) If yes, repeat
+     2) If no, exit
+
+* Project 2
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  A game
+  
+  #+ATTR_REVEAL: :frag (appear)
+  1) Computer picks a random number between 1 and 100
+  2) Computer asks user for a guess
+  3) Computer tells user whether they are high, low, or correct
+  4) Give the user 10 guesses
+  5) When the users guesses it, tell them how many guesses it took
+  6) If the user doesn't get it in 10 guesses, print what the number was
+
+** Project 2 Extension
+  :PROPERTIES:
+  :reveal_background: logo.png
+  :reveal_background_size: 1080px
+  :reveal_background_trans: slide
+  :END:
+
+  #+ATTR_REVEAL: :frag (appear)
+  - Can we teach the computer to intelligently make the best guess?
+  - Switch the roles, have you pick the number, and the computer guess?
+  - What's the maximum guesses it will take for the computer to get it in theory?
+
+       
+
+  
+
+  

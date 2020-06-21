@@ -1,0 +1,105 @@
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodda John}
+\date{06/22/2020}
+\title{Functions}
+\hypersetup{
+ pdfauthor={Rodda John},
+ pdftitle={Functions},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode N/A)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Clerical Matters}
+\label{sec:orgf82f919}
+\begin{itemize}
+\item Welcome!
+\item We're a large group:
+\begin{itemize}
+\item Use Zoom well!
+\item Chatting!
+\item Raising hands!
+\item Faster / slower!
+\end{itemize}
+\end{itemize}
+\subsection{Schedule}
+\label{sec:orgcad322c}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./src/schedule.png}
+\end{center}
+\subsection{Today}
+\label{sec:org20405e9}
+\begin{itemize}
+\item Introduce you to writing your own functions
+\item Learn about breaking projects down into manageable pieces
+\item Start thinking algorithmically
+\end{itemize}
+\section{Functions}
+\label{sec:orga4e7e5c}
+\begin{itemize}
+\item What is a function?
+\item A function is a procedure that execute code given certain inputs.
+\item It must have
+\begin{itemize}
+\item A name
+\item A definition (either local or in a library)
+\end{itemize}
+\item It may have
+\begin{itemize}
+\item Inputs (we will call these args, or arguments)
+\item Outputs (we will call these return values)
+\end{itemize}
+\end{itemize}
+\subsection{Why are these useful?}
+\label{sec:org142e5af}
+\begin{itemize}
+\item Why are functions the most useful programming tool?
+\item What are some use-cases?
+\item How can we conceptualize a function?  How can we tell whether we ought make a function?
+\end{itemize}
+\section{Functions in Python}
+\label{sec:org2a01869}
+\begin{itemize}
+\item We need to learn how to do two things:
+\begin{itemize}
+\item Calling functions (executing them, using them)
+\item Defining functions (making our own)
+\end{itemize}
+\end{itemize}
+\subsection{Calling Functions}
+\label{sec:orge3a97c1}
+\begin{verbatim}
+print('Hello World!')
+\end{verbatim}
+\begin{verbatim}
+len([1, 2, 3, 4, 5, 6])
+\end{verbatim}
+\begin{verbatim}
+input()
+\end{verbatim}
+\begin{itemize}
+\item How many \texttt{args} does each function have?
+\item What is each functions output?
+\end{itemize}
+\subsection{Defining Functions}
+\label{sec:orgcd72136}
+\section{Let's Try it Out}
+\label{sec:org4b5ccec}
+\end{document}
