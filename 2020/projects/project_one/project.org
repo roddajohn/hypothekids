@@ -1,0 +1,76 @@
+#+AUTHOR: Rodda John
+#+TITLE: Project 1
+#+DATE: 06/22/2020
+
+#+OPTIONS: toc:nil
+#+OPTIONS: \n:t
+#+LATEX: \setlength\parindent{0pt}
+
+* Project Euler
+[[https://projecteuler.net/][Project Euler]] ([[https://projecteuler.net/][https://projecteuler.net/]]) is an online repository of beginner, to quite advanced, computer science problems.
+
+This first project will be doing one of them, with the assistance of this worksheet, which strives to lay out the steps to solve the problem.
+
+If you finish this early, I have selected a few others to work on.
+
+If you ever want to practice programming and algorithmic thinking, this is certainly what I recommend.
+* Guide
+1) Read the problem
+2) Break the problem down into atomic components
+3) For each of the following components
+   1) Come up with a name
+   2) Define the input(s)
+   3) Define the output(s)
+   4) Define the test cases
+4) Write each component individually and test each component separately
+5) Come up with the answer / working code
+
+For this first group, I will provide the guidelines for the components, you will be expected to code them, and put them all together.
+* Problem 1 (Euler 1)
+[[https://projecteuler.net/problem=1][Link to the problem]] ([[https://projecteuler.net/problem=1]])
+
+#+begin_example
+  If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+  Find the sum of all the multiples of 3 or 5 below 1000.
+#+end_example
+
+As is common with Euler problems, they give you a sample on a much simpler case (in this case multiples < 10) and then ask you for the same process on a much more complicated case.
+
+** The Steps
+*** ~divisibly_by(number, factor)~ (optional)
+Returns true if and only if ~number~ is evenly divisibly by factor.
+
+This is optional as how you implement ~multiples_lt~ may require ~divisble_by~ and it may not.
+*** ~multiples_lt(root, number)~
+Returns a list of multiples of ~root~ that are less than ~number~.
+*** ~multiple_multiples_lt(root_one, root_two, number)~
+Returns a list of multiples of ~root_one~ and ~root_two~ that are less than ~number~.
+*** ~sum_of_list(l)~
+Returns the sum of the list ~l~.
+
+* Problem 2 (Euler 3)
+[[https://projecteuler.net/problem=3][Link to the problem]] ([[https://projecteuler.net/problem=3]]):
+
+#+begin_example
+  The prime factors of 13195 are 5, 7, 13 and 29.
+
+  What is the largest prime factor of the number 600851475143 ?
+#+end_example
+
+As is common with Euler problems, they give you a sample on a much simpler case (in this case 13195) and then ask you for the same process on a much more complicated case.
+
+** The Steps
+Remember to test each function independently!
+*** ~divisibly_by(number, factor)~
+Returns true if and only if ~number~ is evenly divisibly by factor.
+*** ~factors(number)~
+Returns a list of factors of the ~number~.
+*** ~is_prime(number)~
+Returns true if and only if ~number~ is prime.
+*** ~prime_factors(number)~
+Returns a list of prime factors of a ~number~.
+*** ~max_in_list(l)~
+Returns the maximum value of a list ~l~.
+*** ~euler_three(number)~
+Returns the largest prime factor of the ~number~.  This is the Euler problem.

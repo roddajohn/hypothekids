@@ -1,4 +1,4 @@
-% Created 2020-06-13 Sat 10:09
+% Created 2020-06-21 Sun 09:04
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -29,19 +29,19 @@
 \maketitle
 
 \section{Lists}
-\label{sec:org7418924}
+\label{sec:org27ea79c}
 A list is a new data type.  Instead of holding a single value, it holds multiple values.
 
 You've actually already been introduced to them, and just not known it.  A string is simply a list of characters.
 
 \subsection{How to interact with lists}
-\label{sec:org10243bf}
+\label{sec:org4402241}
 Lists can be defined like this \texttt{l = [1, 2, 3, 4, 5]}.  This is a list of numbers.
 
 All lists are ZERO INDEXED, ie, to access the first element of the list (\texttt{1}), you would write \texttt{l[0]}.  \texttt{l} being the name of the list, and \texttt{0} being the element you are trying to access.
 
 \subsection{A samples}
-\label{sec:org6aae5cd}
+\label{sec:org2f036d3}
 
 \begin{verbatim}
 l = ['a', 'b', 'c', 'd', 'e', 'f'] # A list with 6 strings
@@ -53,7 +53,7 @@ print (l[5]) # This will print 'f'
 \end{verbatim}
 
 \subsection{Strings as lists}
-\label{sec:org852edd5}
+\label{sec:org103f6e7}
 \begin{verbatim}
 sample_string = 'this is a sample string'
 
@@ -62,7 +62,7 @@ print (sample_string[4]) # this will print ' '
 \end{verbatim}
 
 \subsection{Helper function}
-\label{sec:org89c855b}
+\label{sec:orgf66435d}
 The \texttt{len(<iterable>)} function returns the length of a string.  See \href{https://docs.python.org/3/library/functions.html\#len}{the documentation} for more information.
 
 We can use this function to iterate through a list:
@@ -95,7 +95,7 @@ print (sum)
 \end{verbatim}
 
 \subsection{The Problem:}
-\label{sec:orgfa767b0}
+\label{sec:org5eeb166}
 Write a function that finds the average of a list of numbers.
 
 ie, given the list of \texttt{[1, 2, 3, 4, 5]}, it should print \texttt{3}.

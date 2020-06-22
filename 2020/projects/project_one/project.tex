@@ -1,0 +1,120 @@
+% Created 2020-06-22 Mon 07:32
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodda John}
+\date{06/22/2020}
+\title{Project 1}
+\hypersetup{
+ pdfauthor={Rodda John},
+ pdftitle={Project 1},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode N/A)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setlength\parindent{0pt}
+
+\section{Project Euler}
+\label{sec:org079b651}
+\href{https://projecteuler.net/}{Project Euler} (\href{https://projecteuler.net/}{https://projecteuler.net/}) is an online repository of beginner, to quite advanced, computer science problems.\\
+
+This first project will be doing one of them, with the assistance of this worksheet, which strives to lay out the steps to solve the problem.\\
+
+If you finish this early, I have selected a few others to work on.\\
+
+If you ever want to practice programming and algorithmic thinking, this is certainly what I recommend.\\
+\section{Guide}
+\label{sec:orga5ca6b5}
+\begin{enumerate}
+\item Read the problem\\
+\item Break the problem down into atomic components\\
+\item For each of the following components\\
+\begin{enumerate}
+\item Come up with a name\\
+\item Define the input(s)\\
+\item Define the output(s)\\
+\item Define the test cases\\
+\end{enumerate}
+\item Write each component individually and test each component separately\\
+\item Come up with the answer / working code\\
+\end{enumerate}
+
+For this first group, I will provide the guidelines for the components, you will be expected to code them, and put them all together.\\
+\section{Problem 1 (Euler 1)}
+\label{sec:orge601162}
+\href{https://projecteuler.net/problem=1}{Link to the problem} (\url{https://projecteuler.net/problem=1})\\
+
+\begin{verbatim}
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000.
+\end{verbatim}
+
+As is common with Euler problems, they give you a sample on a much simpler case (in this case multiples < 10) and then ask you for the same process on a much more complicated case.\\
+
+\subsection{The Steps}
+\label{sec:orgaf7e253}
+\subsubsection{\texttt{divisibly\_by(number, factor)} (optional)}
+\label{sec:org2ca1272}
+Returns true if and only if \texttt{number} is evenly divisibly by factor.\\
+
+This is optional as how you implement \texttt{multiples\_lt} may require \texttt{divisble\_by} and it may not.\\
+\subsubsection{\texttt{multiples\_lt(root, number)}}
+\label{sec:org5ce404a}
+Returns a list of multiples of \texttt{root} that are less than \texttt{number}.\\
+\subsubsection{\texttt{multiple\_multiples\_lt(root\_one, root\_two, number)}}
+\label{sec:org7c0636b}
+Returns a list of multiples of \texttt{root\_one} and \texttt{root\_two} that are less than \texttt{number}.\\
+\subsubsection{\texttt{sum\_of\_list(l)}}
+\label{sec:orgafb16ed}
+Returns the sum of the list \texttt{l}.\\
+
+\section{Problem 2 (Euler 3)}
+\label{sec:orgbb52f8c}
+\href{https://projecteuler.net/problem=3}{Link to the problem} (\url{https://projecteuler.net/problem=3}):\\
+
+\begin{verbatim}
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
+\end{verbatim}
+
+As is common with Euler problems, they give you a sample on a much simpler case (in this case 13195) and then ask you for the same process on a much more complicated case.\\
+
+\subsection{The Steps}
+\label{sec:org8866de3}
+Remember to test each function independently!\\
+\subsubsection{\texttt{divisibly\_by(number, factor)}}
+\label{sec:orga6fc0c7}
+Returns true if and only if \texttt{number} is evenly divisibly by factor.\\
+\subsubsection{\texttt{factors(number)}}
+\label{sec:org907023d}
+Returns a list of factors of the \texttt{number}.\\
+\subsubsection{\texttt{is\_prime(number)}}
+\label{sec:orgf8f142e}
+Returns true if and only if \texttt{number} is prime.\\
+\subsubsection{\texttt{prime\_factors(number)}}
+\label{sec:org33e0652}
+Returns a list of prime factors of a \texttt{number}.\\
+\subsubsection{\texttt{max\_in\_list(l)}}
+\label{sec:org3dfd5c2}
+Returns the maximum value of a list \texttt{l}.\\
+\subsubsection{\texttt{euler\_three(number)}}
+\label{sec:orgf82145c}
+Returns the largest prime factor of the \texttt{number}.  This is the Euler problem.\\
+\end{document}

@@ -28,7 +28,7 @@
 \maketitle
 
 \section{Clerical Matters}
-\label{sec:orge54ddd9}
+\label{sec:orgc1551f3}
 \begin{itemize}
 \item Welcome!
 \item We're a large group:
@@ -40,19 +40,19 @@
 \end{itemize}
 \end{itemize}
 \subsection{Schedule}
-\label{sec:org810c6bf}
+\label{sec:orgd27a195}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./src/schedule.png}
 \end{center}
 \subsection{Today}
-\label{sec:orgbd2c795}
+\label{sec:orgd4e6139}
 \begin{itemize}
 \item Introduce you to writing your own functions
 \item Learn about breaking projects down into manageable pieces
 \item Start thinking algorithmically
 \end{itemize}
 \section{Functions}
-\label{sec:orge21e2c7}
+\label{sec:orgc8b4336}
 \begin{itemize}
 \item What is a function?
 \item A function is a procedure that execute code given certain inputs.
@@ -68,14 +68,14 @@
 \end{itemize}
 \end{itemize}
 \subsection{Why are these useful?}
-\label{sec:org10fc933}
+\label{sec:org6bf011c}
 \begin{itemize}
 \item Why are functions the most useful programming tool?
 \item What are some use-cases?
 \item How can we conceptualize a function?  How can we tell whether we ought make a function?
 \end{itemize}
 \section{Functions in Python}
-\label{sec:org2efd88e}
+\label{sec:org586883e}
 \begin{itemize}
 \item We need to learn how to do two things:
 \begin{itemize}
@@ -84,7 +84,7 @@
 \end{itemize}
 \end{itemize}
 \subsection{Calling Functions}
-\label{sec:org74f7a80}
+\label{sec:orgdd2d125}
 \begin{verbatim}
 print('Hello World!')
 \end{verbatim}
@@ -99,9 +99,9 @@ input()
 \item What is each functions output?
 \end{itemize}
 \subsection{Defining Functions}
-\label{sec:org76f96a4}
+\label{sec:org10d8915}
 \subsubsection{Simple Function}
-\label{sec:orga453400}
+\label{sec:org54cd30d}
 \begin{itemize}
 \item This function:
 \begin{itemize}
@@ -114,7 +114,7 @@ def product(x, y):
     return x * y
 \end{verbatim}
 \subsubsection{Sum of a list}
-\label{sec:org6c1f246}
+\label{sec:orgec46d06}
 \begin{itemize}
 \item This function:
 \begin{itemize}
@@ -135,7 +135,7 @@ def sum_of_list(l):
     return to_return
 \end{verbatim}
 \subsubsection{Generally}
-\label{sec:org1c72e37}
+\label{sec:orgde8bf2b}
 \begin{itemize}
 \item \texttt{def} opens a function definition block
 \item A name is required, as well as \texttt{()} to denote the args
@@ -143,16 +143,16 @@ def sum_of_list(l):
 \item As with \texttt{if} statements, and \texttt{while} loops, the code in the function is indented
 \end{itemize}
 \subsubsection{Thus}
-\label{sec:org3c9a5f4}
+\label{sec:orgaf634de}
 \begin{verbatim}
 def <name>(<args>):
 --> code
 --> (optional) return <to_return>
 \end{verbatim}
 \section{Let's Try it Out}
-\label{sec:org0ed9b42}
+\label{sec:org0b8a26a}
 \subsection{First Problem}
-\label{sec:orgfe4fa0e}
+\label{sec:orgcc486c9}
 \begin{itemize}
 \item Write a function (\texttt{sum}) that:
 \begin{itemize}
@@ -165,7 +165,7 @@ def <name>(<args>):
 \end{itemize}
 \end{itemize}
 \subsubsection{First Problem Solution}
-\label{sec:org0f75c49}
+\label{sec:org841c02b}
 \begin{verbatim}
 def sum(x, y):
     return x + y
@@ -176,7 +176,7 @@ sum(4, -2)  # Should be 2
 sum(4, 0)   # Should be 4
 \end{verbatim}
 \subsection{Second Problem}
-\label{sec:org20fa6ba}
+\label{sec:org1a56a95}
 \begin{itemize}
 \item Write a function (\texttt{product}) that:
 \begin{itemize}
@@ -186,7 +186,7 @@ sum(4, 0)   # Should be 4
 \end{itemize}
 \end{itemize}
 \subsubsection{Second Problem Solution}
-\label{sec:org09386eb}
+\label{sec:orgaf62ca1}
 \begin{verbatim}
 def product(x, y):
     to_return = 0
@@ -207,7 +207,7 @@ product(2, 100) # Should be 200
 product(2, .5)  # Should be 1
 \end{verbatim}
 \subsection{Third Problem}
-\label{sec:orga6ed0b2}
+\label{sec:org3fc4439}
 \begin{itemize}
 \item Write a function(\texttt{divisible\_by}) that:
 \begin{itemize}
@@ -217,7 +217,7 @@ product(2, .5)  # Should be 1
 \end{itemize}
 \end{itemize}
 \subsubsection{Third Problem Solution}
-\label{sec:orgcaf45d2}
+\label{sec:org47f906f}
 \begin{verbatim}
 def divisible_by(number, factor):
     remainder = number % factor
@@ -235,7 +235,7 @@ divisible_by(15, 4) # Should be False
 \end{verbatim}
 
 \subsubsection{Or, even shorter}
-\label{sec:org4aa6b5a}
+\label{sec:orge6c6e9d}
 \begin{verbatim}
 def divisible_by(number, factor):
     remainder = number % factor
@@ -245,7 +245,7 @@ def divisible_by(number, factor):
     return False
 \end{verbatim}
 \subsubsection{Or, even shorter}
-\label{sec:org2b99f62}
+\label{sec:orgfdfa515}
 \begin{verbatim}
 def divisible_by(number, factor):
     return number % factor == 0
