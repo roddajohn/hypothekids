@@ -176,8 +176,81 @@
   def divisible_by(number, factor):
       return number % factor == 0
 #+end_src
+* Algorithmic Speed
+big O notation
 
+- Let's look at a worksheet problem
+#+begin_src python
+  i = 0
 
+  while i < 100:
+      if i % 2 == 0:
+	  print (i)
 
+      i = i + 1
+#+end_src
 
+#+begin_src python
+  i = 1
 
+  while i < 100:
+      print (i)
+
+      i = i + 2
+#+end_src
+** Sorting Algorithms
+#+ATTR_REVEAL: :frag (appear)
+- Let's talk through 4
+- Selection Sort
+- Insertion Sort
+- Bubble Sort
+- Quicksort
+*** Selection Sort
+#+ATTR_REVEAL: :frag (appear)
+- The algorithm divides the list into two parts (sorted and unsorted).  It then finds the lowest element in the unsorted list, and places it in the ordered list.
+- Let's think through:
+  - Average Performance (comparisons and swaps)
+  - Worst Case Performance (comparisons and swaps)
+  - Best Case Performance (comparisons and swaps)
+*** Selection Sort Revealed
+|             | Worst    | Best     | Average  |
+| Comparisons | $O(n^2)$ | $O(n^2)$ | $O(n^2)$ |
+| Swaps       | $O(n)$   | $O(n)$   | $O(n)$   |
+*** Insertion Sort
+#+ATTR_REVEAL: :frag (appear)
+- The algorithm divides the list into two parts (sorted and unsorted).  It then takes the next element in the unsorted list and inserts it at the correct location in the sorted list.
+- Let's think through:
+  - Average Performance (comparisons and swaps)
+  - Worst Case Performance (comparisons and swaps)
+  - Best Case Performance (comparisons and swaps)
+*** Insertion Sort Revealed
+|            | Worst    | Best   | Average  |
+| Comparison | $O(n^2)$ | $O(n)$ | $O(n^2)$ |
+| Swaps      | $O(n^2)$ | $O(1)$ | $O(n^2)$ |
+*** Bubble Sort
+#+ATTR_REVEAL: :frag (appear)
+- The algorithm traverses an unsorted list and compares two adjacent elements and swaps them if necessary.
+- Let's think through:
+  - Average Performance (comparisons and swaps)
+  - Worst Case Performance (comparisons and swaps)
+  - Best Case Performance (comparisons and swaps)
+*** Bubble Sort Revealed
+|            | Worst    | Best   | Average  |
+| Comparison | $O(n^2)$ | $O(n)$ | $O(n^2)$ |
+| Swaps      | $O(n^2)$ | $O(1)$ | $O(n^2)$ |
+*** Quicksort
+- The algorithm picks a random pivot value and places all values (still unsorted) below the pivot to the left of it, and the values above the pivot to the right of it.  It then recursively does the same thing on both lists.
+- Let's think through:
+  - Average Performance (comparisons and swaps)
+  - Worst Case Performance (comparisons and swaps)
+  - Best Case Performance (comparisons and swaps)
+- Recursive Function
+- Divide and concur
+*** Quicksort Revealed
+|            | Worst    | Best         | Average      |
+| Comparison | $O(n^2)$ | $O(n \log n)$ | $O(n \log n)$ |
+| Swaps      | $O(n^2)$ | $O(n \log n)$ | $O(n \log n)$ |
+*** An Added Element
+Usually we often also care about how much storage we have to use.
+
+Let's think through this.

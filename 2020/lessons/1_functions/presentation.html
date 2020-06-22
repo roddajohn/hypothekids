@@ -22,6 +22,7 @@
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div class="reveal">
@@ -30,8 +31,8 @@
 </section>
 
 <section>
-<section id="slide-orga2f5dc4">
-<h2 id="orga2f5dc4"><span class="section-number-2">1</span> Clerical Matters</h2>
+<section id="slide-org64df7a5">
+<h2 id="org64df7a5"><span class="section-number-2">1</span> Clerical Matters</h2>
 <ul>
 <li class="fragment appear">Welcome!</li>
 <li class="fragment appear">We're a large group:
@@ -45,16 +46,16 @@
 
 </ul>
 </section>
-<section id="slide-orgbd73f2e">
-<h3 id="orgbd73f2e"><span class="section-number-3">1.1</span> Schedule</h3>
+<section id="slide-org036320c">
+<h3 id="org036320c"><span class="section-number-3">1.1</span> Schedule</h3>
 
 <div class="figure">
 <p><img src="./src/schedule.png" alt="schedule.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgf8ad967">
-<h3 id="orgf8ad967"><span class="section-number-3">1.2</span> Today</h3>
+<section id="slide-org3754046">
+<h3 id="org3754046"><span class="section-number-3">1.2</span> Today</h3>
 <ul>
 <li class="fragment appear">Introduce you to writing your own functions</li>
 <li class="fragment appear">Learn about breaking projects down into manageable pieces</li>
@@ -64,8 +65,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org70c0ef4">
-<h2 id="org70c0ef4"><span class="section-number-2">2</span> Functions</h2>
+<section id="slide-orgb6331c0">
+<h2 id="orgb6331c0"><span class="section-number-2">2</span> Functions</h2>
 <ul>
 <li class="fragment appear">What is a function?</li>
 <li class="fragment appear">A function is a procedure that execute code given certain inputs.</li>
@@ -84,8 +85,8 @@
 
 </ul>
 </section>
-<section id="slide-org5bed343">
-<h3 id="org5bed343"><span class="section-number-3">2.1</span> Why are these useful?</h3>
+<section id="slide-org45aa9a8">
+<h3 id="org45aa9a8"><span class="section-number-3">2.1</span> Why are these useful?</h3>
 <ul>
 <li class="fragment appear">Why are functions the most useful programming tool?</li>
 <li class="fragment appear">What are some use-cases?</li>
@@ -95,8 +96,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd01f1ea">
-<h2 id="orgd01f1ea"><span class="section-number-2">3</span> Functions in Python</h2>
+<section id="slide-org60a4bc7">
+<h2 id="org60a4bc7"><span class="section-number-2">3</span> Functions in Python</h2>
 <ul>
 <li class="fragment appear">We need to learn how to do two things:
 <ul>
@@ -107,8 +108,8 @@
 
 </ul>
 </section>
-<section id="slide-org3e4b3e6">
-<h3 id="org3e4b3e6"><span class="section-number-3">3.1</span> Calling Functions</h3>
+<section id="slide-orgff35bd7">
+<h3 id="orgff35bd7"><span class="section-number-3">3.1</span> Calling Functions</h3>
 <div class="org-src-container">
 
 <pre><code class="python" >print('Hello World!')
@@ -130,13 +131,13 @@
 
 </ul>
 </section>
-<section id="slide-orgad4573d">
-<h3 id="orgad4573d"><span class="section-number-3">3.2</span> Defining Functions</h3>
+<section id="slide-org63d0b21">
+<h3 id="org63d0b21"><span class="section-number-3">3.2</span> Defining Functions</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
 </section>
-<section id="slide-org3b92a2b">
-<h4 id="org3b92a2b"><span class="section-number-4">3.2.1</span> Simple Function</h4>
+<section id="slide-orgc181e4e">
+<h4 id="orgc181e4e"><span class="section-number-4">3.2.1</span> Simple Function</h4>
 <ul>
 <li class="fragment appear">This function:
 <ul>
@@ -153,8 +154,8 @@
 </code></pre>
 </div>
 </section>
-<section id="slide-orgf8d1971">
-<h4 id="orgf8d1971"><span class="section-number-4">3.2.2</span> Sum of a list</h4>
+<section id="slide-org5af8756">
+<h4 id="org5af8756"><span class="section-number-4">3.2.2</span> Sum of a list</h4>
 <ul>
 <li class="fragment appear">This function:
 <ul>
@@ -179,8 +180,8 @@
 </code></pre>
 </div>
 </section>
-<section id="slide-org297cd53">
-<h4 id="org297cd53"><span class="section-number-4">3.2.3</span> Generally</h4>
+<section id="slide-org771fa7a">
+<h4 id="org771fa7a"><span class="section-number-4">3.2.3</span> Generally</h4>
 <ul>
 <li class="fragment appear"><code>def</code> opens a function definition block</li>
 <li class="fragment appear">A name is required, as well as <code>()</code> to denote the args</li>
@@ -189,8 +190,8 @@
 
 </ul>
 </section>
-<section id="slide-org4d5ce3d">
-<h4 id="org4d5ce3d"><span class="section-number-4">3.2.4</span> Thus</h4>
+<section id="slide-org16f699f">
+<h4 id="org16f699f"><span class="section-number-4">3.2.4</span> Thus</h4>
 <pre class="example">
 def &lt;name&gt;(&lt;args&gt;):
 --&gt; code
@@ -199,13 +200,13 @@ def &lt;name&gt;(&lt;args&gt;):
 </section>
 </section>
 <section>
-<section id="slide-org1bb698f">
-<h2 id="org1bb698f"><span class="section-number-2">4</span> Let's Try it Out</h2>
+<section id="slide-org567ab93">
+<h2 id="org567ab93"><span class="section-number-2">4</span> Let's Try it Out</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 </section>
-<section id="slide-org51b83b1">
-<h3 id="org51b83b1"><span class="section-number-3">4.1</span> First Problem</h3>
+<section id="slide-orgc7e2d84">
+<h3 id="orgc7e2d84"><span class="section-number-3">4.1</span> First Problem</h3>
 <ul>
 <li class="fragment appear">Write a function (<code>sum</code>) that:
 <ul>
@@ -221,8 +222,8 @@ def &lt;name&gt;(&lt;args&gt;):
 
 </ul>
 </section>
-<section id="slide-org9e98860">
-<h4 id="org9e98860"><span class="section-number-4">4.1.1</span> First Problem Solution</h4>
+<section id="slide-org74264d6">
+<h4 id="org74264d6"><span class="section-number-4">4.1.1</span> First Problem Solution</h4>
 <div class="org-src-container">
 
 <pre><code class="python" >def sum(x, y):
@@ -237,8 +238,8 @@ sum(4, 0)   # Should be 4
 </code></pre>
 </div>
 </section>
-<section id="slide-orgffa6729">
-<h3 id="orgffa6729"><span class="section-number-3">4.2</span> Second Problem</h3>
+<section id="slide-org126a79b">
+<h3 id="org126a79b"><span class="section-number-3">4.2</span> Second Problem</h3>
 <ul>
 <li class="fragment appear">Write a function (<code>product</code>) that:
 <ul>
@@ -250,17 +251,36 @@ sum(4, 0)   # Should be 4
 
 </ul>
 </section>
-<section id="slide-org9eb5526">
-<h4 id="org9eb5526"><span class="section-number-4">4.2.1</span> Second Problem Solution</h4>
-<pre class="example">
-HIHIHIHIHIHIHI
-</pre>
+<section id="slide-orgae3ac27">
+<h4 id="orgae3ac27"><span class="section-number-4">4.2.1</span> Second Problem Solution</h4>
+<div class="org-src-container">
 
+<pre><code class="python" >def product(x, y):
+    to_return = 0
+
+    iterator = 0
+
+    while iterator < y:
+	to_return = to_return + x
+
+	iterator = iterator + 1
+
+    return to_return
+</code></pre>
+</div>
+<div class="org-src-container">
+
+<pre><code class="python" >product(1, 2)   # Should be 2
+product(100, 2) # Should be 200
+product(2, 100) # Should be 200
+product(2, .5)  # Should be 1
+</code></pre>
+</div>
 </section>
-<section id="slide-org6f1df68">
-<h3 id="org6f1df68"><span class="section-number-3">4.3</span> Third Problem</h3>
+<section id="slide-org2b1de9d">
+<h3 id="org2b1de9d"><span class="section-number-3">4.3</span> Third Problem</h3>
 <ul>
-<li class="fragment appear">Write a function that:
+<li class="fragment appear">Write a function(<code>divisible_by</code>) that:
 <ul>
 <li>Accepts two numerical inputs (<code>number</code>, and <code>factor</code>)</li>
 <li>Returns true if and only if <code>number</code> is evenly divisble by <code>factor</code></li>
@@ -269,6 +289,317 @@ HIHIHIHIHIHIHI
 </ul></li>
 
 </ul>
+</section>
+<section id="slide-org27ee10a">
+<h4 id="org27ee10a"><span class="section-number-4">4.3.1</span> Third Problem Solution</h4>
+<div class="org-src-container">
+
+<pre><code class="python" >def divisible_by(number, factor):
+    remainder = number % factor
+
+    if remainder == 0:
+	return True
+    else:
+	return False
+</code></pre>
+</div>
+<div class="org-src-container">
+
+<pre><code class="python" >divisible_by(4, 2)  # Should be True
+divisible_by(4, 1)  # Should be True
+divisible_by(15, 3) # Should be True
+divisible_by(15, 4) # Should be False
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgbf8ea08">
+<h4 id="orgbf8ea08"><span class="section-number-4">4.3.2</span> Or, even shorter</h4>
+<div class="org-src-container">
+
+<pre><code class="python" >def divisible_by(number, factor):
+    remainder = number % factor
+
+    if remainder == 0:
+	return True
+    return False
+</code></pre>
+</div>
+</section>
+<section id="slide-orgb68f1fd">
+<h4 id="orgb68f1fd"><span class="section-number-4">4.3.3</span> Or, even shorter</h4>
+<div class="org-src-container">
+
+<pre><code class="python" >def divisible_by(number, factor):
+    return number % factor == 0
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org2f48310">
+<h2 id="org2f48310"><span class="section-number-2">5</span> Algorithmic Speed</h2>
+<p>
+big O notation
+</p>
+
+<ul>
+<li>Let's look at a worksheet problem</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="python" >i = 0
+
+while i < 100:
+    if i % 2 == 0:
+	print (i)
+
+    i = i + 1
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="python" >i = 1
+
+while i < 100:
+    print (i)
+
+    i = i + 2
+</code></pre>
+</div>
+</section>
+<section id="slide-org1fde0b5">
+<h3 id="org1fde0b5"><span class="section-number-3">5.1</span> Sorting Algorithms</h3>
+<ul>
+<li class="fragment appear">Let's talk through 4</li>
+<li class="fragment appear">Selection Sort</li>
+<li class="fragment appear">Insertion Sort</li>
+<li class="fragment appear">Bubble Sort</li>
+<li class="fragment appear">Quicksort</li>
+
+</ul>
+</section>
+<section id="slide-org2248e40">
+<h4 id="org2248e40"><span class="section-number-4">5.1.1</span> Selection Sort</h4>
+<ul>
+<li class="fragment appear">The algorithm divides the list into two parts (sorted and unsorted).  It then finds the lowest element in the unsorted list, and places it in the ordered list.</li>
+<li class="fragment appear">Let's think through:
+<ul>
+<li>Average Performance (comparisons and swaps)</li>
+<li>Worst Case Performance (comparisons and swaps)</li>
+<li>Best Case Performance (comparisons and swaps)</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgfe80266">
+<h4 id="orgfe80266"><span class="section-number-4">5.1.2</span> Selection Sort Revealed</h4>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Worst</td>
+<td class="org-left">Best</td>
+<td class="org-left">Average</td>
+</tr>
+
+<tr>
+<td class="org-left">Comparisons</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(n^2)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Swaps</td>
+<td class="org-left">\(O(n)\)</td>
+<td class="org-left">\(O(n)\)</td>
+<td class="org-left">\(O(n)\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org01c2028">
+<h4 id="org01c2028"><span class="section-number-4">5.1.3</span> Insertion Sort</h4>
+<ul>
+<li class="fragment appear">The algorithm divides the list into two parts (sorted and unsorted).  It then takes the next element in the unsorted list and inserts it at the correct location in the sorted list.</li>
+<li class="fragment appear">Let's think through:
+<ul>
+<li>Average Performance (comparisons and swaps)</li>
+<li>Worst Case Performance (comparisons and swaps)</li>
+<li>Best Case Performance (comparisons and swaps)</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org5c0cf66">
+<h4 id="org5c0cf66"><span class="section-number-4">5.1.4</span> Insertion Sort Revealed</h4>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Worst</td>
+<td class="org-left">Best</td>
+<td class="org-left">Average</td>
+</tr>
+
+<tr>
+<td class="org-left">Comparison</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(n)\)</td>
+<td class="org-left">\(O(n^2)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Swaps</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(1)\)</td>
+<td class="org-left">\(O(n^2)\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-orgeebe734">
+<h4 id="orgeebe734"><span class="section-number-4">5.1.5</span> Bubble Sort</h4>
+<ul>
+<li class="fragment appear">The algorithm traverses an unsorted list and compares two adjacent elements and swaps them if necessary.</li>
+<li class="fragment appear">Let's think through:
+<ul>
+<li>Average Performance (comparisons and swaps)</li>
+<li>Worst Case Performance (comparisons and swaps)</li>
+<li>Best Case Performance (comparisons and swaps)</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org73f28e8">
+<h4 id="org73f28e8"><span class="section-number-4">5.1.6</span> Bubble Sort Revealed</h4>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Worst</td>
+<td class="org-left">Best</td>
+<td class="org-left">Average</td>
+</tr>
+
+<tr>
+<td class="org-left">Comparison</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(n)\)</td>
+<td class="org-left">\(O(n^2)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Swaps</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(1)\)</td>
+<td class="org-left">\(O(n^2)\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-orgc127d02">
+<h4 id="orgc127d02"><span class="section-number-4">5.1.7</span> Quicksort</h4>
+<ul>
+<li>The algorithm picks a random pivot value and places all values (still unsorted) below the pivot to the left of it, and the values above the pivot to the right of it.  It then recursively does the same thing on both lists.</li>
+<li>Let's think through:
+<ul>
+<li>Average Performance (comparisons and swaps)</li>
+<li>Worst Case Performance (comparisons and swaps)</li>
+<li>Best Case Performance (comparisons and swaps)</li>
+
+</ul></li>
+<li>Recursive Function</li>
+<li>Divide and concur</li>
+
+</ul>
+</section>
+<section id="slide-orge4be724">
+<h4 id="orge4be724"><span class="section-number-4">5.1.8</span> Quicksort Revealed</h4>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">Worst</td>
+<td class="org-left">Best</td>
+<td class="org-left">Average</td>
+</tr>
+
+<tr>
+<td class="org-left">Comparison</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(n \log n)\)</td>
+<td class="org-left">\(O(n \log n)\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Swaps</td>
+<td class="org-left">\(O(n^2)\)</td>
+<td class="org-left">\(O(n \log n)\)</td>
+<td class="org-left">\(O(n \log n)\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org9efe558">
+<h4 id="org9efe558"><span class="section-number-4">5.1.9</span> An Added Element</h4>
+<p>
+Usually we often also care about how much storage we have to use.
+</p>
+
+<p>
+Let's think through this.
+</p>
 </section>
 </section>
 </div>

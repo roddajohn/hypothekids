@@ -28,7 +28,7 @@
 \maketitle
 
 \section{Clerical Matters}
-\label{sec:orgc1551f3}
+\label{sec:org4fe97df}
 \begin{itemize}
 \item Welcome!
 \item We're a large group:
@@ -40,19 +40,19 @@
 \end{itemize}
 \end{itemize}
 \subsection{Schedule}
-\label{sec:orgd27a195}
+\label{sec:org03abe0a}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./src/schedule.png}
 \end{center}
 \subsection{Today}
-\label{sec:orgd4e6139}
+\label{sec:org168109e}
 \begin{itemize}
 \item Introduce you to writing your own functions
 \item Learn about breaking projects down into manageable pieces
 \item Start thinking algorithmically
 \end{itemize}
 \section{Functions}
-\label{sec:orgc8b4336}
+\label{sec:orgb326434}
 \begin{itemize}
 \item What is a function?
 \item A function is a procedure that execute code given certain inputs.
@@ -68,14 +68,14 @@
 \end{itemize}
 \end{itemize}
 \subsection{Why are these useful?}
-\label{sec:org6bf011c}
+\label{sec:org7aec906}
 \begin{itemize}
 \item Why are functions the most useful programming tool?
 \item What are some use-cases?
 \item How can we conceptualize a function?  How can we tell whether we ought make a function?
 \end{itemize}
 \section{Functions in Python}
-\label{sec:org586883e}
+\label{sec:org8d79af8}
 \begin{itemize}
 \item We need to learn how to do two things:
 \begin{itemize}
@@ -84,7 +84,7 @@
 \end{itemize}
 \end{itemize}
 \subsection{Calling Functions}
-\label{sec:orgdd2d125}
+\label{sec:org15c4f19}
 \begin{verbatim}
 print('Hello World!')
 \end{verbatim}
@@ -99,9 +99,9 @@ input()
 \item What is each functions output?
 \end{itemize}
 \subsection{Defining Functions}
-\label{sec:org10d8915}
+\label{sec:orgb305998}
 \subsubsection{Simple Function}
-\label{sec:org54cd30d}
+\label{sec:org0ed8678}
 \begin{itemize}
 \item This function:
 \begin{itemize}
@@ -114,7 +114,7 @@ def product(x, y):
     return x * y
 \end{verbatim}
 \subsubsection{Sum of a list}
-\label{sec:orgec46d06}
+\label{sec:orgb73ddeb}
 \begin{itemize}
 \item This function:
 \begin{itemize}
@@ -135,7 +135,7 @@ def sum_of_list(l):
     return to_return
 \end{verbatim}
 \subsubsection{Generally}
-\label{sec:orgde8bf2b}
+\label{sec:orgcfab638}
 \begin{itemize}
 \item \texttt{def} opens a function definition block
 \item A name is required, as well as \texttt{()} to denote the args
@@ -143,16 +143,16 @@ def sum_of_list(l):
 \item As with \texttt{if} statements, and \texttt{while} loops, the code in the function is indented
 \end{itemize}
 \subsubsection{Thus}
-\label{sec:orgaf634de}
+\label{sec:org5f7f640}
 \begin{verbatim}
 def <name>(<args>):
 --> code
 --> (optional) return <to_return>
 \end{verbatim}
 \section{Let's Try it Out}
-\label{sec:org0b8a26a}
+\label{sec:org1ea10d0}
 \subsection{First Problem}
-\label{sec:orgcc486c9}
+\label{sec:org8819638}
 \begin{itemize}
 \item Write a function (\texttt{sum}) that:
 \begin{itemize}
@@ -165,7 +165,7 @@ def <name>(<args>):
 \end{itemize}
 \end{itemize}
 \subsubsection{First Problem Solution}
-\label{sec:org841c02b}
+\label{sec:orge6e3086}
 \begin{verbatim}
 def sum(x, y):
     return x + y
@@ -176,7 +176,7 @@ sum(4, -2)  # Should be 2
 sum(4, 0)   # Should be 4
 \end{verbatim}
 \subsection{Second Problem}
-\label{sec:org1a56a95}
+\label{sec:org5fcca5e}
 \begin{itemize}
 \item Write a function (\texttt{product}) that:
 \begin{itemize}
@@ -186,7 +186,7 @@ sum(4, 0)   # Should be 4
 \end{itemize}
 \end{itemize}
 \subsubsection{Second Problem Solution}
-\label{sec:orgaf62ca1}
+\label{sec:orge0838a2}
 \begin{verbatim}
 def product(x, y):
     to_return = 0
@@ -207,7 +207,7 @@ product(2, 100) # Should be 200
 product(2, .5)  # Should be 1
 \end{verbatim}
 \subsection{Third Problem}
-\label{sec:org3fc4439}
+\label{sec:org975ca3c}
 \begin{itemize}
 \item Write a function(\texttt{divisible\_by}) that:
 \begin{itemize}
@@ -217,7 +217,7 @@ product(2, .5)  # Should be 1
 \end{itemize}
 \end{itemize}
 \subsubsection{Third Problem Solution}
-\label{sec:org47f906f}
+\label{sec:org27974a7}
 \begin{verbatim}
 def divisible_by(number, factor):
     remainder = number % factor
@@ -235,7 +235,7 @@ divisible_by(15, 4) # Should be False
 \end{verbatim}
 
 \subsubsection{Or, even shorter}
-\label{sec:orge6c6e9d}
+\label{sec:org30ab6ae}
 \begin{verbatim}
 def divisible_by(number, factor):
     remainder = number % factor
@@ -245,9 +245,130 @@ def divisible_by(number, factor):
     return False
 \end{verbatim}
 \subsubsection{Or, even shorter}
-\label{sec:orgfdfa515}
+\label{sec:org0de9958}
 \begin{verbatim}
 def divisible_by(number, factor):
     return number % factor == 0
 \end{verbatim}
+\section{Algorithmic Speed}
+\label{sec:org0da8a37}
+big O notation
+
+\begin{itemize}
+\item Let's look at a worksheet problem
+\end{itemize}
+\begin{verbatim}
+i = 0
+
+while i < 100:
+    if i % 2 == 0:
+	print (i)
+
+    i = i + 1
+\end{verbatim}
+
+\begin{verbatim}
+i = 1
+
+while i < 100:
+    print (i)
+
+    i = i + 2
+\end{verbatim}
+\subsection{Sorting Algorithms}
+\label{sec:orge34e9d4}
+\begin{itemize}
+\item Let's talk through 4
+\item Selection Sort
+\item Insertion Sort
+\item Bubble Sort
+\item Quicksort
+\end{itemize}
+\subsubsection{Selection Sort}
+\label{sec:org5623c67}
+\begin{itemize}
+\item The algorithm divides the list into two parts (sorted and unsorted).  It then finds the lowest element in the unsorted list, and places it in the ordered list.
+\item Let's think through:
+\begin{itemize}
+\item Average Performance (comparisons and swaps)
+\item Worst Case Performance (comparisons and swaps)
+\item Best Case Performance (comparisons and swaps)
+\end{itemize}
+\end{itemize}
+\subsubsection{Selection Sort Revealed}
+\label{sec:org42daac5}
+\begin{center}
+\begin{tabular}{llll}
+ & Worst & Best & Average\\
+Comparisons & \(O(n^2)\) & \(O(n^2)\) & \(O(n^2)\)\\
+Swaps & \(O(n)\) & \(O(n)\) & \(O(n)\)\\
+\end{tabular}
+\end{center}
+\subsubsection{Insertion Sort}
+\label{sec:org76936c5}
+\begin{itemize}
+\item The algorithm divides the list into two parts (sorted and unsorted).  It then takes the next element in the unsorted list and inserts it at the correct location in the sorted list.
+\item Let's think through:
+\begin{itemize}
+\item Average Performance (comparisons and swaps)
+\item Worst Case Performance (comparisons and swaps)
+\item Best Case Performance (comparisons and swaps)
+\end{itemize}
+\end{itemize}
+\subsubsection{Insertion Sort Revealed}
+\label{sec:org3996292}
+\begin{center}
+\begin{tabular}{llll}
+ & Worst & Best & Average\\
+Comparison & \(O(n^2)\) & \(O(n)\) & \(O(n^2)\)\\
+Swaps & \(O(n^2)\) & \(O(1)\) & \(O(n^2)\)\\
+\end{tabular}
+\end{center}
+\subsubsection{Bubble Sort}
+\label{sec:org9c0e961}
+\begin{itemize}
+\item The algorithm traverses an unsorted list and compares two adjacent elements and swaps them if necessary.
+\item Let's think through:
+\begin{itemize}
+\item Average Performance (comparisons and swaps)
+\item Worst Case Performance (comparisons and swaps)
+\item Best Case Performance (comparisons and swaps)
+\end{itemize}
+\end{itemize}
+\subsubsection{Bubble Sort Revealed}
+\label{sec:org859214e}
+\begin{center}
+\begin{tabular}{llll}
+ & Worst & Best & Average\\
+Comparison & \(O(n^2)\) & \(O(n)\) & \(O(n^2)\)\\
+Swaps & \(O(n^2)\) & \(O(1)\) & \(O(n^2)\)\\
+\end{tabular}
+\end{center}
+\subsubsection{Quicksort}
+\label{sec:org1ab29ab}
+\begin{itemize}
+\item The algorithm picks a random pivot value and places all values (still unsorted) below the pivot to the left of it, and the values above the pivot to the right of it.  It then recursively does the same thing on both lists.
+\item Let's think through:
+\begin{itemize}
+\item Average Performance (comparisons and swaps)
+\item Worst Case Performance (comparisons and swaps)
+\item Best Case Performance (comparisons and swaps)
+\end{itemize}
+\item Recursive Function
+\item Divide and concur
+\end{itemize}
+\subsubsection{Quicksort Revealed}
+\label{sec:orgc9028f2}
+\begin{center}
+\begin{tabular}{llll}
+ & Worst & Best & Average\\
+Comparison & \(O(n^2)\) & \(O(n \log n)\) & \(O(n \log n)\)\\
+Swaps & \(O(n^2)\) & \(O(n \log n)\) & \(O(n \log n)\)\\
+\end{tabular}
+\end{center}
+\subsubsection{An Added Element}
+\label{sec:org542f3d4}
+Usually we often also care about how much storage we have to use.
+
+Let's think through this.
 \end{document}
