@@ -1,4 +1,4 @@
-% Created 2020-06-22 Mon 07:32
+% Created 2020-06-22 Mon 13:58
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -30,7 +30,7 @@
 \setlength\parindent{0pt}
 
 \section{Project Euler}
-\label{sec:org079b651}
+\label{sec:orge4bed7d}
 \href{https://projecteuler.net/}{Project Euler} (\href{https://projecteuler.net/}{https://projecteuler.net/}) is an online repository of beginner, to quite advanced, computer science problems.\\
 
 This first project will be doing one of them, with the assistance of this worksheet, which strives to lay out the steps to solve the problem.\\
@@ -39,7 +39,7 @@ If you finish this early, I have selected a few others to work on.\\
 
 If you ever want to practice programming and algorithmic thinking, this is certainly what I recommend.\\
 \section{Guide}
-\label{sec:orga5ca6b5}
+\label{sec:orgab8dcbe}
 \begin{enumerate}
 \item Read the problem\\
 \item Break the problem down into atomic components\\
@@ -56,7 +56,7 @@ If you ever want to practice programming and algorithmic thinking, this is certa
 
 For this first group, I will provide the guidelines for the components, you will be expected to code them, and put them all together.\\
 \section{Problem 1 (Euler 1)}
-\label{sec:orge601162}
+\label{sec:org2e6bd4a}
 \href{https://projecteuler.net/problem=1}{Link to the problem} (\url{https://projecteuler.net/problem=1})\\
 
 \begin{verbatim}
@@ -68,24 +68,24 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 As is common with Euler problems, they give you a sample on a much simpler case (in this case multiples < 10) and then ask you for the same process on a much more complicated case.\\
 
 \subsection{The Steps}
-\label{sec:orgaf7e253}
+\label{sec:org487810e}
 \subsubsection{\texttt{divisibly\_by(number, factor)} (optional)}
-\label{sec:org2ca1272}
+\label{sec:org26fec98}
 Returns true if and only if \texttt{number} is evenly divisibly by factor.\\
 
 This is optional as how you implement \texttt{multiples\_lt} may require \texttt{divisble\_by} and it may not.\\
 \subsubsection{\texttt{multiples\_lt(root, number)}}
-\label{sec:org5ce404a}
+\label{sec:orgbbb9148}
 Returns a list of multiples of \texttt{root} that are less than \texttt{number}.\\
 \subsubsection{\texttt{multiple\_multiples\_lt(root\_one, root\_two, number)}}
-\label{sec:org7c0636b}
+\label{sec:orgee837b2}
 Returns a list of multiples of \texttt{root\_one} and \texttt{root\_two} that are less than \texttt{number}.\\
 \subsubsection{\texttt{sum\_of\_list(l)}}
-\label{sec:orgafb16ed}
+\label{sec:orgd1cea60}
 Returns the sum of the list \texttt{l}.\\
 
 \section{Problem 2 (Euler 3)}
-\label{sec:orgbb52f8c}
+\label{sec:org35b6b7a}
 \href{https://projecteuler.net/problem=3}{Link to the problem} (\url{https://projecteuler.net/problem=3}):\\
 
 \begin{verbatim}
@@ -97,24 +97,24 @@ What is the largest prime factor of the number 600851475143 ?
 As is common with Euler problems, they give you a sample on a much simpler case (in this case 13195) and then ask you for the same process on a much more complicated case.\\
 
 \subsection{The Steps}
-\label{sec:org8866de3}
+\label{sec:orge8ff73a}
 Remember to test each function independently!\\
 \subsubsection{\texttt{divisibly\_by(number, factor)}}
-\label{sec:orga6fc0c7}
+\label{sec:org08b560d}
 Returns true if and only if \texttt{number} is evenly divisibly by factor.\\
 \subsubsection{\texttt{factors(number)}}
-\label{sec:org907023d}
+\label{sec:org6d07b41}
 Returns a list of factors of the \texttt{number}.\\
 \subsubsection{\texttt{is\_prime(number)}}
-\label{sec:orgf8f142e}
+\label{sec:org1728973}
 Returns true if and only if \texttt{number} is prime.\\
 \subsubsection{\texttt{prime\_factors(number)}}
-\label{sec:org33e0652}
+\label{sec:orge413652}
 Returns a list of prime factors of a \texttt{number}.\\
 \subsubsection{\texttt{max\_in\_list(l)}}
-\label{sec:org3dfd5c2}
+\label{sec:org7a06c12}
 Returns the maximum value of a list \texttt{l}.\\
 \subsubsection{\texttt{euler\_three(number)}}
-\label{sec:orgf82145c}
+\label{sec:org77fd58d}
 Returns the largest prime factor of the \texttt{number}.  This is the Euler problem.\\
 \end{document}
