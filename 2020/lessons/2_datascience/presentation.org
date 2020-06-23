@@ -1,0 +1,175 @@
+#+AUTHOR: Rodda John
+#+TITLE: Datascience
+#+DATE: 06/23/2020
+#+OPTIONS: timestamp:nil
+
+#+REVEAL_THEME: white
+#+OPTIONS: toc:nil
+#+REVEAL_PLUGINS: (highlight)
+
+* Datascience
+#+ATTR_REVEAL: :frag (appear)
+- What is datascience?
+** Definition
+Data science is an inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data. Data science is related to data mining, deep learning and big data.
+** So what?
+#+ATTR_REVEAL: :frag (appear)
+- Why do we care about datascience?
+- Where might we see datascience in practice?
+** What we are going to do
+(these are all quite real)
+#+ATTR_REVEAL: :frag (appear)
+- A new type of a loop: ~for~
+- File management in Python
+  - And some associated functions
+- Library use in Python (specifically numpy)
+- How to combine file management and numpy to do some simple data analysis
+- Graphing in matplotlib
+* ~For~ Loops in Python
+#+ATTR_REVEAL: :frag (appear)
+- A ~for~ loop is a special structure for iterating through an iterable
+** Examples
+Assuming:
+#+begin_src python
+  l = [1, 2, 3, 4, 5, 6]
+#+end_src
+Check out:
+#+begin_src python
+  for e in l:
+      print(e)
+#+end_src
+Or using ~range~:
+#+begin_src python
+  for i in range(10):
+      print(i)
+#+end_src
+** So if we rewrite ~sum_of_list~:
+#+begin_src python
+  def sum_of_list(l):
+      to_return = 0
+
+      for e in l:
+	  to_return += e
+
+      return to_return
+#+end_src
+** Conclusion
+Computer Scientists are lazy.
+* File Management in Python
+#+ATTR_REVEAL: :frag (appear)
+- What is a file?
+- Are there different types of files?
+- Anyone know what a ~.csv~ is?
+** ~.csv~ - Comma Separated Value
+- An excel spreadsheet can be exported as a ~.csv~
+- A ~.csv~ is in plaintext
+- Sample:
+#+begin_example
+  fname,lname,age,gpa
+  Bart,Simpson,30,3.6
+  Homer,Simpson,32,3.7
+  Spongebob,Squarepants,20,4.0
+#+end_example
+This is really:
+#+begin_example
+  fname,lname,age,gpa\nBart,Simpson,30,3.6\nHomer,Simpson,32,3.7...
+#+end_example
+** For Our Purposes
+| fname     | lname       | age | gpa |
+|-----------+-------------+-----+-----|
+| Bart      | Simpson     |  30 | 3.6 |
+| Homer     | Simpson     |  32 | 3.7 |
+| Spongebob | Squarepants |  20 | 4.0 |
+** ~open(file, mode)~
+- Accepts two arguments, ~file~ (name of the file), and ~mode~ (see table)
+- A function that returns a ~file pointer~ to a file
+| char | meaning                        |
+|------+--------------------------------|
+| ~r~  | open for reading (default)     |
+| ~w~  | open for writing (truncation)  |
+| ~a~  | open for writing (appendation) |
+** ~read()~
+- A function that operates on a file pointer (~fp.read()~)
+- Returns the contents of the file as a string
+** ~write(contents)~
+- ~fp.write(content)~ Writes ~contents~ to ~fp~.
+** Examples
+(assuming ~csv~ is ~data.csv~)
+#+begin_src python
+  print(open('data.csv'))
+#+end_src
+
+#+begin_src python
+  contents = 'stuff,to,write\nsecond,line'
+
+  open('data.csv').write(contents)
+#+end_src
+** ~split(char)~
+#+ATTR_REVEAL: :frag (appear)
+- ~str.split(char)~
+  - Runs on a string and splits the string into a list of various elements delimined by ~char~
+** Another example
+#+begin_src python
+  data = open('data.csv').read()
+
+  sum_of_elements = 0
+
+  for line in data.split('\n'):
+      parsed_line = line.split(',')
+
+      sum_of_elements += int(parsed_line[2])
+
+  print(sum_of_elements / len(data.split('\n')))
+#+end_src
+* Library Use in Python
+#+ATTR_REVEAL: :frag (appear)
+- A library is a collection of functions written by others that supplement what is natively provided by Python.
+- We will be using ~numpy~, a scientific processing library
+** Loading files in ~numpy~
+#+begin_src python
+  import numpy
+
+  np_array = numpy.genfromtxt('gpas.csv', delimiter=',', skip_header=1)
+
+  print(np_array)
+#+end_src
+This creates a two dimensional array.
+** Advanced Array Splicing
+#+begin_src python
+  # This returns a list of all values in the column with index 3
+
+  gpas = np_array[:,3]  
+#+end_src
+** Statistics Functions in ~numpy~
+| function     | description                   | sample use      |
+|--------------+-------------------------------+-----------------|
+| ~median(a)~  | Finds the median of an array  | ~median(gpas)~  |
+| ~average(a)~ | Finds the average of an array | ~average(gpas)~ |
+| ~mean(a)~    | Finds the mean of an array    | ~mean(gpas)~    |
+| ~std(a)~     | Finds the std of an array     | ~std(gpas)~     |
+| ~var(a)~     | Finds the var of an array     | ~var(gpas)~     |
+
+** Thus
+#+begin_src python
+  import numpy
+
+  all_data = numpy.genfromtxt('gpas.csv', delimiter=',', skip_header=1)
+
+  gpas = all_data[:,3]
+
+  print (gpas)
+
+  print (numpy.median(gpas))
+  print (numpy.average(gpas))
+  print (numpy.mean(gpas))
+  print (numpy.std(gpas))
+  print (numpy.var(gpas))
+#+end_src
+* A Small Assignment
+- Given a file, ~gpa.csv~, find all the statistical values for each column:
+  - Median
+  - Mean
+  - Stddev
+  - Variance
+* Graphing through Matplotlib
+To REPL we go!

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Datascience</title>
+<meta name="author" content="(Rodda John)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/white.css" id="theme"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Datascience</h1><h2 class="author">Rodda John</h2><h2 class="date">06/23/2020</h2>
+</section>
+
+<section>
+<section id="slide-orge7d1f5e">
+<h2 id="orge7d1f5e"><span class="section-number-2">1</span> Datascience</h2>
+<ul>
+<li class="fragment appear">What is datascience?</li>
+
+</ul>
+</section>
+<section id="slide-orgb1a22dc">
+<h3 id="orgb1a22dc"><span class="section-number-3">1.1</span> Definition</h3>
+<p>
+Data science is an inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data. Data science is related to data mining, deep learning and big data.
+</p>
+</section>
+<section id="slide-org299f1a8">
+<h3 id="org299f1a8"><span class="section-number-3">1.2</span> So what?</h3>
+<ul>
+<li class="fragment appear">Why do we care about datascience?</li>
+<li class="fragment appear">Where might we see datascience in practice?</li>
+
+</ul>
+</section>
+<section id="slide-orgfef4603">
+<h3 id="orgfef4603"><span class="section-number-3">1.3</span> What we are going to do</h3>
+<p>
+(these are all quite real)
+</p>
+<ul>
+<li class="fragment appear">A new type of a loop: <code>for</code></li>
+<li class="fragment appear">File management in Python
+<ul>
+<li>And some associated functions</li>
+
+</ul></li>
+<li class="fragment appear">Library use in Python (specifically numpy)</li>
+<li class="fragment appear">How to combine file management and numpy to do some simple data analysis</li>
+<li class="fragment appear">Graphing in matplotlib</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3aa127c">
+<h2 id="org3aa127c"><span class="section-number-2">2</span> <code>For</code> Loops in Python</h2>
+<ul>
+<li class="fragment appear">A <code>for</code> loop is a special structure for iterating through an iterable</li>
+
+</ul>
+</section>
+<section id="slide-orgef903fb">
+<h3 id="orgef903fb"><span class="section-number-3">2.1</span> Examples</h3>
+<p>
+Assuming:
+</p>
+<div class="org-src-container">
+
+<pre><code class="python" >l = [1, 2, 3, 4, 5, 6]
+</code></pre>
+</div>
+<p>
+Check out:
+</p>
+<div class="org-src-container">
+
+<pre><code class="python" >for e in l:
+    print(e)
+</code></pre>
+</div>
+<p>
+Or using <code>range</code>:
+</p>
+<div class="org-src-container">
+
+<pre><code class="python" >for i in range(10):
+    print(i)
+</code></pre>
+</div>
+</section>
+<section id="slide-org0c7514a">
+<h3 id="org0c7514a"><span class="section-number-3">2.2</span> So if we rewrite <code>sum_of_list</code>:</h3>
+<div class="org-src-container">
+
+<pre><code class="python" >def sum_of_list(l):
+    to_return = 0
+
+    for e in l:
+	to_return += e
+
+    return to_return
+</code></pre>
+</div>
+</section>
+<section id="slide-orgade5f86">
+<h3 id="orgade5f86"><span class="section-number-3">2.3</span> Conclusion</h3>
+<p>
+Computer Scientists are lazy.
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org0537efc">
+<h2 id="org0537efc"><span class="section-number-2">3</span> File Management in Python</h2>
+<ul>
+<li class="fragment appear">What is a file?</li>
+<li class="fragment appear">Are there different types of files?</li>
+<li class="fragment appear">Anyone know what a <code>.csv</code> is?</li>
+
+</ul>
+</section>
+<section id="slide-org0261a74">
+<h3 id="org0261a74"><span class="section-number-3">3.1</span> <code>.csv</code> - Comma Separated Value</h3>
+<ul>
+<li>An excel spreadsheet can be exported as a <code>.csv</code></li>
+<li>A <code>.csv</code> is in plaintext</li>
+<li>Sample:</li>
+
+</ul>
+<pre class="example">
+fname,lname,age,gpa
+Bart,Simpson,30,3.6
+Homer,Simpson,32,3.7
+Spongebob,Squarepants,20,4.0
+</pre>
+<p>
+This is really:
+</p>
+<pre class="example">
+fname,lname,age,gpa\nBart,Simpson,30,3.6\nHomer,Simpson,32,3.7...
+</pre>
+</section>
+<section id="slide-org81cffa1">
+<h3 id="org81cffa1"><span class="section-number-3">3.2</span> For Our Purposes</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">fname</th>
+<th scope="col" class="org-left">lname</th>
+<th scope="col" class="org-right">age</th>
+<th scope="col" class="org-right">gpa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Bart</td>
+<td class="org-left">Simpson</td>
+<td class="org-right">30</td>
+<td class="org-right">3.6</td>
+</tr>
+
+<tr>
+<td class="org-left">Homer</td>
+<td class="org-left">Simpson</td>
+<td class="org-right">32</td>
+<td class="org-right">3.7</td>
+</tr>
+
+<tr>
+<td class="org-left">Spongebob</td>
+<td class="org-left">Squarepants</td>
+<td class="org-right">20</td>
+<td class="org-right">4.0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org25963b6">
+<h3 id="org25963b6"><span class="section-number-3">3.3</span> <code>open(file, mode)</code></h3>
+<ul>
+<li>Accepts two arguments, <code>file</code> (name of the file), and <code>mode</code> (see table)</li>
+<li>A function that returns a <code>file pointer</code> to a file</li>
+
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">char</th>
+<th scope="col" class="org-left">meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>r</code></td>
+<td class="org-left">open for reading (default)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>w</code></td>
+<td class="org-left">open for writing (truncation)</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>a</code></td>
+<td class="org-left">open for writing (appendation)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-org49fb73e">
+<h3 id="org49fb73e"><span class="section-number-3">3.4</span> <code>read()</code></h3>
+<ul>
+<li>A function that operates on a file pointer (<code>fp.read()</code>)</li>
+<li>Returns the contents of the file as a string</li>
+
+</ul>
+</section>
+<section id="slide-org9cfd06d">
+<h3 id="org9cfd06d"><span class="section-number-3">3.5</span> <code>write(contents)</code></h3>
+<ul>
+<li><code>fp.write(content)</code> Writes <code>contents</code> to <code>fp</code>.</li>
+
+</ul>
+</section>
+<section id="slide-org03f7f0b">
+<h3 id="org03f7f0b"><span class="section-number-3">3.6</span> Examples</h3>
+<p>
+(assuming <code>csv</code> is <code>data.csv</code>)
+</p>
+<div class="org-src-container">
+
+<pre><code class="python" >print(open('data.csv'))
+</code></pre>
+</div>
+
+<div class="org-src-container">
+
+<pre><code class="python" >contents = 'stuff,to,write\nsecond,line'
+
+open('data.csv').write(contents)
+</code></pre>
+</div>
+</section>
+<section id="slide-org32b8c80">
+<h3 id="org32b8c80"><span class="section-number-3">3.7</span> <code>split(char)</code></h3>
+<ul>
+<li class="fragment appear"><code>str.split(char)</code>
+<ul>
+<li>Runs on a string and splits the string into a list of various elements delimined by <code>char</code></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org73b867a">
+<h3 id="org73b867a"><span class="section-number-3">3.8</span> Another example</h3>
+<div class="org-src-container">
+
+<pre><code class="python" >data = open('data.csv').read()
+
+sum_of_elements = 0
+
+for line in data.split('\n'):
+    parsed_line = line.split(',')
+
+    sum_of_elements += int(parsed_line[2])
+
+print(sum_of_elements / len(data.split('\n')))
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org3589a66">
+<h2 id="org3589a66"><span class="section-number-2">4</span> Library Use in Python</h2>
+<ul>
+<li class="fragment appear">A library is a collection of functions written by others that supplement what is natively provided by Python.</li>
+<li class="fragment appear">We will be using <code>numpy</code>, a scientific processing library</li>
+
+</ul>
+</section>
+<section id="slide-org22b4c91">
+<h3 id="org22b4c91"><span class="section-number-3">4.1</span> Loading files in <code>numpy</code></h3>
+<div class="org-src-container">
+
+<pre><code class="python" >import numpy
+
+np_array = numpy.genfromtxt('gpas.csv', delimiter=',', skip_header=1)
+
+print(np_array)
+</code></pre>
+</div>
+<p>
+This creates a two dimensional array.
+</p>
+</section>
+<section id="slide-org643c99f">
+<h3 id="org643c99f"><span class="section-number-3">4.2</span> Advanced Array Splicing</h3>
+<div class="org-src-container">
+
+<pre><code class="python" ># This returns a list of all values in the column with index 3
+
+gpas = np_array[:,3]  
+</code></pre>
+</div>
+</section>
+<section id="slide-orgab85ee4">
+<h3 id="orgab85ee4"><span class="section-number-3">4.3</span> Statistics Functions in <code>numpy</code></h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">function</th>
+<th scope="col" class="org-left">description</th>
+<th scope="col" class="org-left">sample use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>median(a)</code></td>
+<td class="org-left">Finds the median of an array</td>
+<td class="org-left"><code>median(gpas)</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>average(a)</code></td>
+<td class="org-left">Finds the average of an array</td>
+<td class="org-left"><code>average(gpas)</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>mean(a)</code></td>
+<td class="org-left">Finds the mean of an array</td>
+<td class="org-left"><code>mean(gpas)</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>std(a)</code></td>
+<td class="org-left">Finds the std of an array</td>
+<td class="org-left"><code>std(gpas)</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><code>var(a)</code></td>
+<td class="org-left">Finds the var of an array</td>
+<td class="org-left"><code>var(gpas)</code></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-org10667bd">
+<h3 id="org10667bd"><span class="section-number-3">4.4</span> Thus</h3>
+<div class="org-src-container">
+
+<pre><code class="python" >import numpy
+
+all_data = numpy.genfromtxt('gpas.csv', delimiter=',', skip_header=1)
+
+gpas = all_data[:,3]
+
+print (gpas)
+
+print (numpy.median(gpas))
+print (numpy.average(gpas))
+print (numpy.mean(gpas))
+print (numpy.std(gpas))
+print (numpy.var(gpas))
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org5fd0608">
+<h2 id="org5fd0608"><span class="section-number-2">5</span> A Small Assignment</h2>
+<ul>
+<li>Given a file, <code>gpa.csv</code>, find all the statistical values for each column:
+<ul>
+<li>Median</li>
+<li>Mean</li>
+<li>Stddev</li>
+<li>Variance</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org1e38891">
+<h2 id="org1e38891"><span class="section-number-2">6</span> Graphing through Matplotlib</h2>
+<p>
+To REPL we go!
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Rodda John}
+\date{06/23/2020}
+\title{Datascience}
+\hypersetup{
+ pdfauthor={Rodda John},
+ pdftitle={Datascience},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.2.1 (Org mode N/A)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\section{Datascience}
+\label{sec:orgf98bf56}
+\begin{itemize}
+\item What is datascience?
+\end{itemize}
+\subsection{Definition}
+\label{sec:org2dfb81a}
+Data science is an inter-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from many structural and unstructured data. Data science is related to data mining, deep learning and big data.
+\subsection{So what?}
+\label{sec:orgfa2adc6}
+\begin{itemize}
+\item Why do we care about datascience?
+\item Where might we see datascience in practice?
+\end{itemize}
+\subsection{What we are going to do}
+\label{sec:orge82de1c}
+(these are all quite real)
+\begin{itemize}
+\item A new type of a loop: \texttt{for}
+\item File management in Python
+\begin{itemize}
+\item And some associated functions
+\end{itemize}
+\item Library use in Python (specifically numpy)
+\item How to combine file management and numpy to do some simple data analysis
+\item Graphing in matplotlib
+\end{itemize}
+\section{\texttt{For} Loops in Python}
+\label{sec:orgd64b99f}
+\begin{itemize}
+\item A \texttt{for} loop is a special structure for iterating through an iterable
+\end{itemize}
+\subsection{Examples}
+\label{sec:org7f960b4}
+Assuming:
+\begin{verbatim}
+l = [1, 2, 3, 4, 5, 6]
+\end{verbatim}
+Check out:
+\begin{verbatim}
+for e in l:
+    print(e)
+\end{verbatim}
+Or using \texttt{range}:
+\begin{verbatim}
+for i in range(10):
+    print(i)
+\end{verbatim}
+\subsection{So if we rewrite \texttt{sum\_of\_list}:}
+\label{sec:orgcdbf7bd}
+\begin{verbatim}
+def sum_of_list(l):
+    to_return = 0
+
+    for e in l:
+	to_return += e
+
+    return to_return
+\end{verbatim}
+\subsection{Conclusion}
+\label{sec:org340547b}
+Computer Scientists are lazy.
+\section{File Management in Python}
+\label{sec:org10f6511}
+\begin{itemize}
+\item What is a file?
+\item Are there different types of files?
+\item Anyone know what a \texttt{.csv} is?
+\end{itemize}
+\subsection{\texttt{.csv} - Comma Separated Value}
+\label{sec:org557d2ba}
+\begin{itemize}
+\item An excel spreadsheet can be exported as a \texttt{.csv}
+\item A \texttt{.csv} is in plaintext
+\item Sample:
+\end{itemize}
+\begin{verbatim}
+fname,lname,age,gpa
+Bart,Simpson,30,3.6
+Homer,Simpson,32,3.7
+Spongebob,Squarepants,20,4.0
+\end{verbatim}
+This is really:
+\begin{verbatim}
+fname,lname,age,gpa\nBart,Simpson,30,3.6\nHomer,Simpson,32,3.7...
+\end{verbatim}
+\subsection{For Our Purposes}
+\label{sec:org9da459d}
+\begin{center}
+\begin{tabular}{llrr}
+fname & lname & age & gpa\\
+\hline
+Bart & Simpson & 30 & 3.6\\
+Homer & Simpson & 32 & 3.7\\
+Spongebob & Squarepants & 20 & 4.0\\
+\end{tabular}
+\end{center}
+\subsection{\texttt{open(file, mode)}}
+\label{sec:orga24cb89}
+\begin{itemize}
+\item Accepts two arguments, \texttt{file} (name of the file), and \texttt{mode} (see table)
+\item A function that returns a \texttt{file pointer} to a file
+\end{itemize}
+\begin{center}
+\begin{tabular}{ll}
+char & meaning\\
+\hline
+\texttt{r} & open for reading (default)\\
+\texttt{w} & open for writing (truncation)\\
+\texttt{a} & open for writing (appendation)\\
+\end{tabular}
+\end{center}
+\subsection{\texttt{read()}}
+\label{sec:orgfcedc26}
+\begin{itemize}
+\item A function that operates on a file pointer (\texttt{fp.read()})
+\item Returns the contents of the file as a string
+\end{itemize}
+\subsection{\texttt{write(contents)}}
+\label{sec:org28d84b4}
+\begin{itemize}
+\item \texttt{fp.write(content)} Writes \texttt{contents} to \texttt{fp}.
+\end{itemize}
+\subsection{Examples}
+\label{sec:org24c611b}
+(assuming \texttt{csv} is \texttt{data.csv})
+\begin{verbatim}
+print(open('data.csv'))
+\end{verbatim}
+
+\begin{verbatim}
+contents = 'stuff,to,write\nsecond,line'
+
+open('data.csv').write(contents)
+\end{verbatim}
+\subsection{\texttt{split(char)}}
+\label{sec:orga94bcff}
+\begin{itemize}
+\item \texttt{str.split(char)}
+\begin{itemize}
+\item Runs on a string and splits the string into a list of various elements delimined by \texttt{char}
+\end{itemize}
+\end{itemize}
+\subsection{Another example}
+\label{sec:orgbf56ffa}
+\begin{verbatim}
+data = open('data.csv').read()
+
+sum_of_elements = 0
+
+for line in data.split('\n'):
+    parsed_line = line.split(',')
+
+    sum_of_elements += int(parsed_line[2])
+
+print(sum_of_elements / len(data.split('\n')))
+\end{verbatim}
+\section{Library Use in Python}
+\label{sec:orgb4b8c9a}
+\begin{itemize}
+\item A library is a collection of functions written by others that supplement what is natively provided by Python.
+\item We will be using \texttt{numpy}, a scientific processing library
+\end{itemize}
+\subsection{Loading files in \texttt{numpy}}
+\label{sec:orgb382ddb}
+\begin{verbatim}
+import numpy
+
+np_array = numpy.genfromtxt('gpas.csv', delimiter=',', skip_header=1)
+
+print(np_array)
+\end{verbatim}
+This creates a two dimensional array.
+\subsection{Advanced Array Splicing}
+\label{sec:orgf1138de}
+\begin{verbatim}
+# This returns a list of all values in the column with index 3
+
+gpas = np_array[:,3]  
+\end{verbatim}
+\subsection{Statistics Functions in \texttt{numpy}}
+\label{sec:org284875d}
+\begin{center}
+\begin{tabular}{lll}
+function & description & sample use\\
+\hline
+\texttt{median(a)} & Finds the median of an array & \texttt{median(gpas)}\\
+\texttt{average(a)} & Finds the average of an array & \texttt{average(gpas)}\\
+\texttt{mean(a)} & Finds the mean of an array & \texttt{mean(gpas)}\\
+\texttt{std(a)} & Finds the std of an array & \texttt{std(gpas)}\\
+\texttt{var(a)} & Finds the var of an array & \texttt{var(gpas)}\\
+\end{tabular}
+\end{center}
+
+\subsection{Thus}
+\label{sec:org04a97a5}
+\begin{verbatim}
+import numpy
+
+all_data = numpy.genfromtxt('gpas.csv', delimiter=',', skip_header=1)
+
+gpas = all_data[:,3]
+
+print (gpas)
+
+print (numpy.median(gpas))
+print (numpy.average(gpas))
+print (numpy.mean(gpas))
+print (numpy.std(gpas))
+print (numpy.var(gpas))
+\end{verbatim}
+\section{A Small Assignment}
+\label{sec:orgdd9744e}
+\begin{itemize}
+\item Given a file, \texttt{gpa.csv}, find all the statistical values for each column:
+\begin{itemize}
+\item Median
+\item Mean
+\item Stddev
+\item Variance
+\end{itemize}
+\end{itemize}
+\section{Graphing through Matplotlib}
+\label{sec:orgc546a84}
+To REPL we go!
+\end{document}
