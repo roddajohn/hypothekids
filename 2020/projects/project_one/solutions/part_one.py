@@ -4,50 +4,44 @@ def divisible_by(number, factor):
 def multiples_lt(root, number):
     multiples = []
 
-    i = 1
-    while i < number:
+    for i in range(1, number):
         if divisible_by(i, root):
             multiples.append(i)
 
-        i += 1
-
     return multiples
 
-
-def multiple_multiples_lt(root_one, root_two, number):
+def multiple_multiples_lt(root_one,
+                          root_two,
+                          number):
     root_one_multiples = multiples_lt(root_one, number)
-    root_two_multiples = multiples_lt(root_two, number)
+    root_two_multiples = multiples_lt(root_two,number)
 
     new_multiples = []
 
-    i = 0
-    while i < len(root_one_multiples):
-        element = root_one_multiples[i]
-        if not element in new_multiples:
-            new_multiples.append(element)
-        i += 1
 
-    i = 0
-    while i < len(root_two_multiples):
-        element = root_two_multiples[i]
+    for element in root_one_multiples:
         if not element in new_multiples:
             new_multiples.append(element)
-        i += 1
+
+    for element in root_two_multiples:
+        if not element in new_multiples:
+            new_multiples.append(element)
 
     return new_multiples
 
-
 def sum_of_list(l):
-    i = 0
-
     to_return = 0
 
-    while i < len(l):
-        to_return += l[i]
-
-        i += 1
+    for i in l:
+        to_return += i
 
     return to_return
 
 # ANSWER #
-print(sum_of_list(multiple_multiples_lt(3, 5, 1000)))
+print(
+    sum_of_list(
+        multiple_multiples_lt(
+            3, 5, 1000
+        )
+    )
+)
